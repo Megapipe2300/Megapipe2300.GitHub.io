@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Cosplay Fotos y Videos
+		</title>
+                
+        
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scale=no">
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="apple-mobile-web-app-capatible" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-tittle" content="Cosplayfyv">
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">
+			function CargaPagina(sUrl){		
+				$.ajax({
+					type: "HOST",
+					cache:false,
+					url: sUrl,
+					contentType: "application/x-www-form-urlencoded;charset=utf-8",
+					success: function(msg) {
+						if(msg.length>0){
+							document.getElementById("body").innerHTML=msg;
+							return;
+						}
+					},
+					    error: function(XMLHttpRequest, textStatus, errorThrown) {
+						alert("Pagina No Encontrada" );
+					}
+				});
+			}
+		</script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJTVNCM1YV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LJTVNCM1YV');
+</script>
+	</head>
+	<body>
+<div class="contenedor">	
+   	<div class="elemento">
+	
+	<h1>Bienvenidos a Cosplay Fotos y Videos</h1>
+		 <h1>Galeria</h1>   
+	        <div class="main">	
+    		 
+			 <div onclick="location.href='paginas/2015.html'">
+		            2015
+			 </div>
+			<div onclick="location.href='paginas/2016.html'">
+			    2016
+			 </div>
+			<div onclick="location.href='paginas/2017.html'">
+                            2017
+			 </div>
+		   <div onclick="location.href='paginas/2018.html'">
+                             2018
+			 </div>
+			 <div onclick="location.href='paginas/2019.html'">
+                           2019
+			 </div>
+			 <div onclick="location.href='paginas/2021.html'">
+                           2021
+			 </div>
+			 <div onclick="location.href='paginas/2022.html'">
+                          2022
+			 </div >
+			 <div onclick="location.href='paginas/2023.html'">
+                              2023
+			 </div>
+			 <div onclick="location.href='https://www.youtube.com/channel/UCRCfldc8xm2V5xK8TlKS51A'">
+                          Videos
+			 </div>
+			 
+			 
+		   </div>
+	    </div>
+	</div>
+<div class="marca" >
+<H6>ⒸCosplayFyV2023</H6>
+</div>	
+  </body>
+</html>

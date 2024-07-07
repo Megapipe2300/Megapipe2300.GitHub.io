@@ -1,0 +1,99 @@
+body {
+	font-family: Comic Sans MS;
+	background: #5333ed;
+		
+}
+
+.contenedor
+{
+	
+    display: flex;
+    flex-wrap:wrap;
+	width: 100%;
+	
+}
+
+.elemento
+{
+
+	width: 98%;
+	height: 1000px;
+	
+}
+
+.elemento h1
+{
+	color: #ffffff;
+	font-size:40px;
+	text-align:center;
+	
+}
+
+.main
+{
+	
+    display:flex;
+	flex-wrap:wrap;
+	padding:10px;
+	align-content:center;
+	
+}	
+
+.main div
+{
+	background-color:#2cd4d9;
+	width:100px;
+	margin:10px;
+	text-align:center;
+	line-height:75px;
+	font-size:30px;
+	border:2px solid back;
+	color:white;
+	
+	
+}
+
+.main div:hover
+{
+    background:#FF64EF;
+    transition: 0.2s;
+    
+}
+
+.marca h6
+{
+	
+color:white;
+float:right;
+	
+}
+
+
+
+span:hover + div {
+  display: block;
+}
+
+@media screen and (max-width:655px)
+{
+	.elemento
+	{
+		width:100%;
+		
+	}
+	
+	.marca h6
+{
+	
+   color:white;
+   float:right;
+	
+}
+	
+}
+
+
+
+
+
+
