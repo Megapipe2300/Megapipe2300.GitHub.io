@@ -1,0 +1,475 @@
+/*WEB*/
+
+body {
+	
+	font-size: 22px;
+	width:100% ;
+	background:#e7e7e7;
+	
+	
+}
+
+
+
+.contenedor
+{
+  display:flex;
+ flex-flow: column; /*para bajar los div*/
+ justify-content: space-between;
+ padding: 10px; 
+ 
+ 
+ 
+}
+
+.elemento{
+	/*  aqui se modifican los espacios entre div   */
+    width: 100%; /*para moviles */
+    height: 100%; /*tamaÃ±a de div*/
+    margin-top: 0.5em; /* separa los div de distancia*/
+  
+}
+
+
+/*NAV*/
+
+   .nav {
+    background: #0055ff;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav h1 {
+    color: white;
+    font-size: 24px;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1.5em;
+}
+
+.miBoton,
+.drop-down-menu .drop-down-button {
+    font-size: 1rem;
+    color: white;
+    padding: .5rem .5rem;
+    background-color: inherit;
+    display: block;
+    border: none; /* Quitar el borde */
+    outline: none;
+    cursor: pointer;
+}
+
+.drop-down-menu-content {
+    display: none;
+    position: absolute;
+    background-color: #ef8354;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;	
+}
+
+.drop-down-menu-content .miBoton {
+    font-size: 1rem;
+    outline: none;
+    color: white;
+    padding: .5rem .5rem;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.drop-down-menu-content .miBoton:hover {
+    	background-color: #ef8354;
+	cursor: pointer;
+}
+
+
+.drop-down-menu:hover .drop-down-menu-content {
+ 	background-color: #0055ff;
+	cursor: pointer;
+        display: block;
+}
+
+.nav ul {
+    display: flex;
+    color: white;
+    font-size: 14px;
+    padding: 1rem 1rem;
+}
+
+.drawer {
+    font-size: 1rem;
+    color: white;
+    float: left;
+    cursor: pointer;
+    display: none;
+    margin-left: 1rem;
+    border: solid .1rem #ffffff;
+    padding: .1rem;
+    border-radius: .1rem;
+    margin-bottom: 1em;
+}
+
+#ckbox {
+    display: none;
+}
+
+.active {
+    right: 0%;
+}
+
+.overlay::before {
+    content: '';
+    position: fixed;
+    width: 100%; 
+    height: 100%;
+    top: 0; 
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    opacity: 0.8;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+
+/* --- --- CAROUSEL --- --- */
+
+
+.carousel-inner img
+{
+	width:100%;
+	height:400px;
+	
+	
+}
+
+
+
+/*CONTENIDO*/
+
+#tabla
+{
+	width:99%;
+	height:auto;
+	display:flex;
+	
+	
+}
+
+
+
+#aside
+{
+	width: 100%;
+	height: auto;
+    margin-top:1.5em;
+}
+
+.widget
+{ 
+	width: 32%;
+	height: auto;
+	padding:8px;
+	float:left;
+}
+
+.widget > h4
+{
+	color: #ffffff;
+	background: #0055ff;
+	width: 100%;
+	text-align: center;
+	padding: 10px 0px;
+	margin-bottom: 10px;
+	border-radius: 0.5em;
+	font-size:24px;
+	
+}
+
+
+.widget > h5
+{
+	color:#0055ff;
+	font-size:20px;
+		
+}
+
+
+.widget img{
+	width: 250px;
+	height: 150px;
+	max-width:80%;	
+}
+
+.widget li
+{
+ list-style:none;
+ color:#0055ff;
+ font-size:26px;
+	
+}
+
+.widget li:hover
+{
+	cursor: pointer;
+	background: #ef8354;  
+	
+}
+
+
+
+
+
+/*FOOTER*/
+
+#footer{
+	
+	width: 100%;
+	border-radius: 1em;
+	margin-top:1em;
+	
+	
+}
+
+.acerca-de{
+	width: 99%;
+	float: left;
+	text-align: justify;
+	
+}
+
+
+
+.acerca-de  > p
+{
+        
+	color: #0055ff;
+	font-size: 21px;
+
+
+}
+
+
+/*BOTOM*/
+
+.boton
+{
+	text-decoration: none;
+	display: inline-block;
+}
+
+.btn.prin
+{
+	color:#0055ff;
+}
+
+	.btn:hover
+	{
+		background-color: #ef8354;
+		
+	}
+
+
+.button:active
+{
+	background-color: #ef8354;
+}
+
+
+
+
+@media screen and (max-width:655px)
+{
+	body{
+		width: 99%;
+		font-size: 18px;
+		
+	}
+
+
+		#header
+	{
+		width: 99%;
+	}
+
+	/*NAV*/
+	
+
+        #nav
+	{
+	justify-content: flex;
+                
+
+	}
+        
+       .nav h1
+	   {
+	   margin-top:.2em;
+	   font-size:24px;
+		   
+	   }
+        
+        
+        .drawer
+        {
+          display:block;
+		  
+          
+        }
+        
+       
+        .drop-down-menu-content
+        {
+          width: 60%; /*porte del contendio*/
+          position: relative;
+		  
+        }
+        
+           
+
+        /* desaparecen los menu*/
+        
+        ul
+        {
+            position: fixed;
+            width: 60%;
+            height: 100%;
+            background-color: #0055ff;
+            top:12vh;
+            left: -100%; 
+            text-align: left;
+            transition: all .5s;
+            display: flex;
+            flex-direction: column;
+            align-content: stretch;
+	    z-index:2;
+           
+        }
+        
+       #ckbox:checked ~ .menu-box
+       {
+           left: 10px;
+           
+       }
+	   
+
+       .carousel-inner img
+{
+	
+	height:260px;
+	
+	
+}
+	
+
+
+	
+	/*TABLA*/
+
+
+   #tabla
+  {
+       
+	width: 97%;
+	height: auto;
+        
+
+  }
+
+
+	/*ASIDE*/
+	
+	
+   #aside
+  {
+	width: 100%;
+        margin-top: .5em;
+
+  }
+
+	.widget > h4
+	{
+		width:100%;
+		font-size: 14px;
+	}
+	.widget > h5
+	{
+		font-size: 12px;
+
+	}
+
+    .widget img{
+	width: 330px;
+	height: 200px;
+        display: block;
+        text-align: center;
+    }
+    
+    .widget li
+    {
+      font-size: 20px;  
+        
+    }
+
+
+ /*FOOTER*/
+/* 
+	#footer
+	{
+		width: 98%;
+	}
+
+	.acerca-de p
+	{
+		font-size: 14px;
+
+	}
+	*/
+
+}
+
+
+
+
+/*
+
+
+/* 
+#contenido article {
+	float: left;
+	margin-bottom: 20px;
+}
+
+#contenido article .titulo {
+	
+	font-size: 22px;
+	font-family: sourcesans;
+	color: #0055ff;
+}
+
+#contenido article .fecha {
+	font-size: 14px;
+	color: #0055ff;
+	margin-bottom: 7px;
+}
+
+#contenido article .thumb {
+	width: 220px;
+	height: 150px;
+	float: left;
+	margin: 0px 10px 10px 0px;
+	padding: 1m;
+}
+
+#contenido article > p {
+	color: #0055ff;
+	font-size: 16px;
+	text-align: justify;
+	margin: 1em;
+}
+*/
+
+
+
