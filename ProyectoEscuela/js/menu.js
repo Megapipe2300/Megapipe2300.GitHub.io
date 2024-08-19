@@ -1,5 +1,5 @@
 const che = document.querySelector('.drawer');
-const menu = document.querySelector('.menu-box"')
+const menu = document.querySelector('.menu-box')
 
 
 che.addEventListener("click", cerrar );
