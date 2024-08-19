@@ -20,7 +20,7 @@ document.getElementById("ckbox").click();
 }
         }
 
-función ExisteObj(strObj){
+function ExisteObj(strObj){
 return (document.all(strObj)!= null);
 }
 
