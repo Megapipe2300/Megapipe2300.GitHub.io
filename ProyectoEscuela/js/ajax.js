@@ -15,6 +15,13 @@ function CargaPagina(sUrl) {
                     alert("Página No Encontrada");
                 }
             });
+if(ExisteObj("ckbox")){
+document.getElementById("ckbox").click();
+}
         }
+
+función ExisteObj(strObj){
+return (document.all(strObj)!=null);
+}
 
 
