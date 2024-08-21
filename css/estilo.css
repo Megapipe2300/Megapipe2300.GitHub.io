@@ -1,7 +1,7 @@
 body {
-	font-family: Comic Sans MS;
-	background: #5333ed;
-		
+	font-family: Times New Roman;
+	font-size: 20px;
+        background:  #1c1c1c;
 }
 
 .contenedor
@@ -9,7 +9,7 @@ body {
 	
     display: flex;
     flex-wrap:wrap;
-	width: 100%;
+    width: 100%;
 	
 }
 
@@ -17,13 +17,13 @@ body {
 {
 
 	width: 98%;
-	height: 1000px;
+	height: 100%;
 	
 }
 
 .elemento h1
 {
-	color: #ffffff;
+	color: white;
 	font-size:40px;
 	text-align:center;
 	
@@ -32,7 +32,7 @@ body {
 .main
 {
 	
-    display:flex;
+        display:flex;
 	flex-wrap:wrap;
 	padding:10px;
 	align-content:center;
@@ -41,30 +41,32 @@ body {
 
 .main div
 {
-	background-color:#2cd4d9;
+	background-color:#bf2548;
 	width:100px;
 	margin:10px;
 	text-align:center;
 	line-height:75px;
 	font-size:30px;
-	border:2px solid back;
 	color:white;
+        cursor: pointer;
 	
 	
 }
 
 .main div:hover
 {
-    background:#FF64EF;
+    background:#ff0000;
     transition: 0.2s;
     
 }
+
+
 
 .marca h6
 {
 	
 color:white;
-float:right;
+ float:right;
 	
 }
 
@@ -76,6 +78,19 @@ span:hover + div {
 
 @media screen and (max-width:655px)
 {
+	
+	body {
+	
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	
+	
+		
+}
+	
+	
+	
 	.elemento
 	{
 		width:100%;
@@ -85,15 +100,9 @@ span:hover + div {
 	.marca h6
 {
 	
-   color:white;
-   float:right;
+   color:black;
+   text-align: center;
 	
 }
 	
 }
-
-
-
-
-
-
