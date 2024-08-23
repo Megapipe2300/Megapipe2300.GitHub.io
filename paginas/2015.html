@@ -9,13 +9,12 @@ and open the template in the editor.
         <title>Cosplay Fotos y Videos</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scale=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="apple-mobile-web-app-capatible" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="apple-mobile-web-app-tittle" content="Cosplayfyv">
-		<link rel="stylesheet" type="text/css" href="css/estilo.css">
 		<style>
 
 
@@ -41,7 +40,7 @@ body {
 {
 
 	width: 100%;
-	height: 750px;
+	height: auto;
 	
 	
 }
@@ -53,23 +52,35 @@ body {
 	font-size:70px;
      
 }
+.main
+{
+	
+        display:flex;
+	flex-wrap:wrap;
+	padding:10px;
+	align-content:center;
+	
+}	
 
-ul, ol{
-	list-style: none;
+.main div
+{
+	background-color:#bf2548;
+	width:280px;
+	margin:10px;
+	text-align:center;
+	line-height:75px;
+	font-size:18px;
+	color:white;
+        cursor: pointer;
+	
+	
 }
 
 
 
-.nav li a 
+.main div:hover
 {
- text-decoration:none;
- color: #ffffff;;
- font-size:26px;
-}
-
-a:hover
-{
-	background-color:#ff0000;
+	background-color:red;
 	transition:0.3s;
 	border-radius:0.3em;
 }
@@ -111,44 +122,82 @@ a:hover
 </style>
     </head>
     <body>
-        <div class="contenedor">
+ <div class="contenedor">
    <div class="elemento">
 
       <h1 > 2015</h1>
+     
+  <div class="main">    
+            <div onclick="location.href='../imagenes/2015/AnimeCharityFest.html'">
+            <b> Anime Charity Fest</b>
+	    </div>
+             <div onclick="location.href='../imagenes/2015/AnimeMatsuri.html'">
+            <b> Anime Matsur</b>
+	    </div>
+            <div onclick="location.href='../imagenes/2015/AniversarioOtakuSaurio.html'">
+            <b> Aniversario OtakuSaurio</b>
+	    </div>
+            <div onclick="location.href='../imagenes/2015/ANTI-FEST.html'">
+            <b> ANTI-FEST Dia Sabado</b>
+	    </div>
+             <div onclick="location.href='../imagenes/2015/BunkaNoHiFestivalJapones.html'">
+            <b> Bunka No Hi Festival Japones</b>
+	    </div>     
+            <div onclick="location.href='../imagenes/2015/ComicZone.html'">
+            <b> Comic Zone</b>
+	    </div>      
+            <div onclick="location.href='../imagenes/2015/DiaInternacionalCosplay.html'">
+            <b> Dia Internacional Del Cosplay</b>
+	    </div> 
+             <div onclick="location.href='../imagenes/2015/Erabu.html'">
+            <b> Erabu</b>
+	    </div>  
+             <div onclick="location.href='../imagenes/2015/FeriaEdicionUnbrella.html'">
+            <b> Feria Edicion Unbrella</b>
+	    </div>          
+              <div onclick="location.href='../imagenes/2015/Festigame.html'">
+            <b> Festigame</b>
+	    </div>         
+              <div onclick="location.href='../imagenes/2015/HaruMatsuri6-ChristmasEdition.html'">
+            <b> Haru Matsuri 6-Christmas Edition</b>
+	    </div>      
+              <div onclick="location.href='../imagenes/2015/InuYaNekoHouse.html'">
+            <b> Inu Ya Neko House</b>
+	    </div>  
+              <div onclick="location.href='../imagenes/2015/JuntaPacuMan.html'">
+            <b> Junta PacuMan</b>
+	    </div> 
+              <div onclick="location.href='../imagenes/2015/Otakuton.html'">
+            <b> Otakuton</b>
+	    </div>        
+              <div onclick="location.href='../imagenes/2015/OtakuSaurio.html'">
+            <b> Otakusaurio</b>
+	    </div>
+           <div onclick="location.href='../imagenes/2015/SarangAi2.0.html'">
+            <b> Sarang Ai 2.0o</b>
+	    </div>     
+             <div onclick="location.href='../imagenes/2015/SuicideSquad.html'">
+            <b> Suicide Squad</b>
+	    </div> 
+              <div onclick="location.href='../imagenes/2015/SuperJaponExpo.html'">
+            <b> Super Japon Expo</b>
+	    </div>      
+              <div onclick="location.href='../imagenes/2015/ZombieWalker.html'">
+            <b> Zombie Walker</b>
+	    </div>  
+               <div onclick="location.href='../imagenes/2015/8voEventoOtakusauriosTiki-Tiki-Ti.html'">
+            <b> 8vo Evento Otakusaurios Tiki-Ti</b>
+	    </div>        
 
-
-<div class="nav">
-    <ul class="menu">
-       <li ><a href="../imagenes/2015/AnimeCharityFest.html"><b>Anime Charity Fest</b> </a> </li>
-	   <li ><a href="../imagenes/2015/AnimeMatsuri.html"><b>Anime Matsuri</b> </a> </li>
-	   <li ><a href="../imagenes/2015/AniversarioOtakuSaurio.html"><b>Aniversario OtakuSaurio</b> </a> </li>
-	   <li ><a href="../imagenes/2015/ANTI-FEST.html"><b>ANTI-FEST Dia Sabado</b> </a> </li>
-	   <li ><a href="../imagenes/2015/BunkaNoHiFestivalJapones.html"><b>Bunka No Hi Festival Japones</b> </a> </li>
-	   <li ><a href="../imagenes/2015/ComicZone.html"><b>Comic Zone</b> </a> </li>
-	   <li ><a href="../imagenes/2015/DiaInternacionalCosplay.html"><b> Dia Internacional Del Cosplay</b> </a> </li>
-	   <li ><a href="../imagenes/2015/Erabu.html"><b> Erabu</b> </a> </li>
-	   <li ><a href="../imagenes/2015/FeriaEdicionUnbrella.html"><b> Feria Edicion Unbrella</b> </a> </li>
-	   <li ><a href="../imagenes/2015/Festigame.html"><b> Festigame</b> </a> </li>
-	   <li ><a href="../imagenes/2015/HaruMatsuri6-ChristmasEdition.html"><b>Haru Matsuri 6-Christmas Edition</b> </a> </li>
-	   <li ><a href="../imagenes/2015/InuYaNekoHouse.html"><b> Inu Ya Neko House</b> </a> </li>
-	   <li ><a href="../imagenes/2015/JuntaPacuMan.html"><b>Junta PacuMan</b> </a> </li>
-	   <li ><a href="../imagenes/2015/Otakuton.html"><b>Otakuton</b> </a> </li>
-	   <li ><a href="../imagenes/2015/OtakuSaurio.html"><b>Otakusaurio</b> </a> </li>
-	   <li ><a href="../imagenes/2015/SarangAi2.0.html"><b>Sarang Ai 2.0</b> </a> </li>
-	   <li ><a href="../imagenes/2015/SuicideSquad.html"><b>Suicide Squad</b> </a>
-	   <li ><a href="../imagenes/2015/SuperJaponExpo.html"><b>Super Japon Expo</b> </a>
-	   <li ><a href="../imagenes/2015/ZombieWalker.html"><b>Zombie Walker</b> </a>
-	   <li ><a href="../imagenes/2015/8voEventoOtakusauriosTiki-Tiki-Ti.html"><b>8vo Evento Otakusaurios  Tiki-Tiki-Ti </b> </a>
-   
-    </ul>
-
-</div>
-
+   </div>
+ </div>   
 <div class="vol" >
 <a href="../index.html" class="boton">Volver</a>
 </div>
+
   </div >
-</div >
+  
+
 
     </body>
 </html>
