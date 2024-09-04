@@ -1,0 +1,158 @@
+<style>
+
+ 
+.con
+{
+	display: flex;
+    flex-flow: column;
+	width: 99%;
+	height: auto;
+	
+	
+	
+}
+
+
+
+.caja
+{
+	width: 100%;
+	height: auto; 
+    margin-top:2em;
+	margin-bottom:2em;
+}
+
+    .con h1
+	{
+	color: #0055ff ;
+	text-align: center;
+	
+    }
+
+
+
+.main
+{
+	
+    display:flex;
+	flex-wrap:wrap;
+	padding:10px;
+	align-content:center;
+	margin-top:1em;
+	
+}	
+
+.main div
+{
+	background-color:#0055ff;
+	width:280px;
+	margin:10px;
+	text-align:center;
+	line-height:70px;
+	font-size:18px;
+	color:white;
+    cursor: pointer;
+	
+	
+}
+
+
+
+.main div:hover
+{
+	background-color:#ef8354;
+	transition:0.3s;
+	border-radius:0.3em;
+}
+	   
+
+
+
+
+@media screen and (max-width:655px){
+    
+   .con
+{
+	width:100%;
+	/*para encajar las lineas hay que modificar la caja madre*/
+	
+	
+}
+
+
+
+ .con li
+ 
+ {
+ list-style: none;
+ color:white ;
+ background:#0055ff;
+ padding:40px 20px  /* separaciones de listado*/
+ 
+ }
+
+
+.con li:hover{
+	background: #ef8354;
+	cursor: pointer;
+	
+}
+
+
+
+
+.caja 
+{
+width:80%;
+
+}
+
+ .con h1
+ {
+ font-size:40px;
+ 
+ }
+
+     .caja li
+{
+font-size:20px;
+}
+     
+
+	 
+}
+
+
+</style>
+
+
+
+
+<div class="con">
+
+	<h1>
+		<b>TALLERES</b>
+	</h1>
+
+    <div class="caja">	
+		  <div class="main">  
+
+		  
+            <div onclick="CargaPagina('Paginas/Nuestra.escuela/Talleres/aj.html')"> 
+            <b> Ajedrez</b>
+	    </div>
+            <div onclick="CargaPagina('Paginas/Nuestra.escuela/Talleres/bas.html')" > 
+            <b> Baloncesto y Handball</b>
+	    </div>		
+            <div onclick="CargaPagina('Paginas/Nuestra.escuela/Talleres/ten.html')" > 
+            <b> Tenis</b>
+	    </div>		
+            <div onclick="CargaPagina('Paginas/Nuestra.escuela/Talleres/tm.html')" > 
+            <b> Taller Multideportivo</b>
+	    </div>				
+		
+		
+	
+    </div>
+  </div>
+</div>
