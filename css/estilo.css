@@ -66,7 +66,8 @@ body {
 {
 	
 color:white;
- float:right;
+float:right;
+margin-top:310px;
 	
 }
 
@@ -110,6 +111,7 @@ span:hover + div {
 	
    color:white;
    text-align: center;
+   margin-top: 10px;
 	
 }
 	
