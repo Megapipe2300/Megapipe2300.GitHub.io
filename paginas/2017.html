@@ -1,243 +1,246 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>Cosplay Fotos y Videos</title>
-        <meta charset="windows-1252">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="viewport" content="width=device-width, initial-scale=1,>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="apple-mobile-web-app-capatible" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-tittle" content="Cosplayfyv">
-	
-<style>
+<html lang="es">
+<head>
+    <title>Cosplay Fotos y Videos - Eventos 2017</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de eventos cosplay del año 2017 con fotos de Anime Convention, Comic Zone, Super Japan Expo y más">
+    <meta name="keywords" content="cosplay, fotos, eventos 2017, anime, festival, convención">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CosplayFyV">
+    <style>
+        :root {
+            --primary-color: #bf2548;
+            --hover-color: #ff0000;
+            --bg-color: #1c1c1c;
+            --text-color: #ffffff;
+        }
+        
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.1rem;
+            background: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-body {
-	    font-family: Times New Roman;
-		font-size: 20px;
-        background:  #1c1c1c;
-}
+        .elemento {
+            width: 100%;
+            margin-bottom: 30px;
+        }
 
+        .elemento h1 {
+            text-align: center;
+            color: var(--text-color);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin: 20px 0 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
-.contenedor
-{
-	
-    display: flex;
-    flex-flow: column;
-	width: 99%;
-	height: 1000px;
-          
-	
-}
+        .main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 10px;
+            justify-content: center;
+        }   
 
-.elemento
-{
+        .main div {
+            background-color: var(--primary-color);
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
 
-	width: 100%;
-	height: auto;
-	
-	
-}
+        .main div:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
-.elemento h1
- {
-	text-align: center;
-    color: #ffffff;
-	font-size:70px;
-     
-}
-.main
-{
-	
-        display:flex;
-	flex-wrap:wrap;
-	padding:10px;
-	align-content:center;
-	
-}	
+        .vol {
+           
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+        }
 
-.main div
-{
-	background-color:#bf2548;
-	width:280px;
-	margin:10px;
-	text-align:center;
-	line-height:50px;
-	font-size:18px;
-	color:white;
-        cursor: pointer;
-	
-	
-}
+        .boton {
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
 
+        .boton:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
+        @media screen and (max-width: 768px) {
+            .main {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .boton {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
 
-.main div:hover
-{
-	background-color: #FF5733 ;
-	transition:0.3s;
-	border-radius:0.3em;
-}
+        @media screen and (max-width: 480px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+            
+            .elemento h1 {
+                font-size: 2.2rem;
+                margin: 15px 0 30px;
+            }
+            
+            .contenedor {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="elemento">
+            <h1>Eventos Cosplay 2017</h1>
+            
+            <div class="main">    
+                <div onclick="location.href='../imagenes/2017/AnimeConvention.html'">
+                    <strong>Anime Convention</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/AnimeFriend.html'">
+                    <strong>Anime Friend</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2017/AnimottoX-mas.html'">
+                    <strong>Animotto X-mas</strong>
+                </div>          
+                <div onclick="location.href='../imagenes/2017/AsianStyleFest.html'">
+                    <strong>Asian StyleFest</strong>
+                </div> 		
+                <div onclick="location.href='../imagenes/2017/Blibliotecanacional.html'">
+                    <strong>Biblioteca Nacional</strong>
+                </div> 		
+                <div onclick="location.href='../imagenes/2017/BuinCon.html'">
+                    <strong>Buin Con</strong>
+                </div> 	
+                <div onclick="location.href='../imagenes/2017/Comi-Con.html'">
+                    <strong>Comi-Con</strong>
+                </div> 	
+                <div onclick="location.href='../imagenes/2017/ComicZone.html'">
+                    <strong>Comic Zone</strong>
+                </div> 
+                <div onclick="location.href='../imagenes/2017/CosplaySesion.html'">
+                    <strong>Cosplay Sesión Photography - After AEX</strong>
+                </div>		
+                <div onclick="location.href='../imagenes/2017/Dragolsailo.html'">
+                    <strong>Dragon Ball vs Sailor Moon</strong>
+                </div>		
+                <div onclick="location.href='../imagenes/2017/DragonBallFest.html'">
+                    <strong>Dragon Ball Fest</strong>
+                </div>		
+                <div onclick="location.href='../imagenes/2017/Expo3Hobbis.html'">
+                    <strong>Expo 3 Hobbies, Ficción y Fantasía</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/Exponona.html'">
+                    <strong>Exponona Winter is Here</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/Festigame.html'">
+                    <strong>Festigame</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/FondaFriki.html'">
+                    <strong>Fonda Friki</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/GainaxFansFest.html'">
+                    <strong>Gainax Fans Fest</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/HappyDay.html'">
+                    <strong>Happy Day</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/Otakusaurios.html'">
+                    <strong>Otakusaurios Versión Primavera</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/OtaShow.html'">
+                    <strong>OtaShow</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/Presentacion.html'">
+                    <strong>Presentación Comi-Con Torre Telefónica</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/Presentacionfestigame.html'">
+                    <strong>Presentación Festigame</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/SesionCaballerosdelZodiaco.html'">
+                    <strong>Sesión Caballeros del Zodiaco</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/SesionChocolate.html'">
+                    <strong>Sesión Chocolate Cosplay Express</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2017/Sesiondefotos.html'">
+                    <strong>Sesión de Fotos Día Internacional del Cosplay</strong>
+                </div>	
+                <div onclick="location.href='../imagenes/2017/SesionDomingo.html'">
+                    <strong>Sesión Domingo</strong>
+                </div>	
+                <div onclick="location.href='../imagenes/2017/SesionMenji.html'">
+                    <strong>Sesión Menji</strong>
+                </div>				
+                <div onclick="location.href='../imagenes/2017/Sesionyuko.html'">
+                    <strong>Sesión Yuko</strong>
+                </div>				
+                <div onclick="location.href='../imagenes/2017/SuperJapanExpop1.html'">
+                    <strong>Super Japan Expo Día Sábado</strong>
+                </div>				
+                <div onclick="location.href='../imagenes/2017/SuperJapanExpop2.html'">
+                    <strong>Super Japan Expo Día Domingo</strong>
+                </div>								
+                <div onclick="location.href='../imagenes/2017/SuperSora.html'">
+                    <strong>Super Sora Festival</strong>
+                </div>				
+                <div onclick="location.href='../imagenes/2017/ZombieWalk.html'">
+                    <strong>Zombie Walk</strong>
+                </div>		
+            </div>
+        </div>
 
-    .vol
-	{
-	
-	width:10%;
-	height: 10% ;
-	
-     }
-	 
-    .boton {
-	 float:left;
-     padding: 20px; /*espacio alrededor texto*/
-     background-color: #bf2548; /*color botÃ³n*/
-     color: #ffffff; /*color texto*/
-     text-decoration: none; /*decoraciÃ³n texto*/
-     text-transform: uppercase; /*capitalizaciÃ³n texto*/
-	 border-radius:1em;
-
-      }
-
-   .boton:hover
-	{
-		background-color:  #FF5733 ;
-	}
-
-@media screen and (max-width:655px)
-{
-.boton
-{
-  padding:10px;
-}
-
-.main div
-{
-    width: 40%;
-    line-height: 50px;
-}
-
-}
-</style>
-
-    </head>
-	
-    <body>
-	
- <div class="contenedor">
-   <div class="elemento">
-
-<h1> 2017</h1>
-
-       <div class="main">    
-            <div onclick="location.href='../imagenes/2017/AnimeConvention.html'">
-            <b> Anime Convention</b>
-	    </div>
-              <div onclick="location.href='../imagenes/2017/AnimeFriend.html'">
-            <b> Anime Friend</b>
-	    </div>           
-               <div onclick="location.href='../imagenes/2017/AnimottoX-mas.html'">
-            <b>Animotto X-mas</b>
-	    </div>          
-               <div onclick="location.href='../imagenes/2017/AsianStyleFest.html'">
-            <b>Asian StyleFest</b>
-	    </div> 		
-               <div onclick="location.href='../imagenes/2017/Blibliotecanacional.html'">
-            <b>Bliblioteca Nacional</b>
-	    </div> 		
-               <div onclick="location.href='../imagenes/2017/BuinCon.html'">
-            <b>Buin Con</b>
-	    </div> 	
-               <div onclick="location.href='../imagenes/2017/Comi-Con.html'">
-            <b>Comi-Con</b>
-	    </div> 	
-               <div onclick="location.href='../imagenes/2017/ComicZone.html'">
-            <b>Comic Zone </b>
-	    </div> 
-               <div onclick="location.href='../imagenes/2017/CosplaySesion.html'">
-            <b>Cosplay Sesion Photography - After AEX </b>
-	    </div>		
-               <div onclick="location.href='../imagenes/2017/Dragolsailo.html'">
-            <b>Dragon ball vs sailor moon </b>
-	    </div>		
-               <div onclick="location.href='../imagenes/2017/DragonBallFest.html'">
-            <b>Dragon Ball Fest </b>
-	    </div>		
-               <div onclick="location.href='../imagenes/2017/Expo3Hobbis.html'">
-            <b>Expo 3 Hobbis, ficcion y fantasia </b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/Exponona.html'">
-            <b>Exponona Winter is here revisar </b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/Festigame.html'">
-            <b>Festigame </b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/FondaFriki.html'">
-            <b>Fonda Friki </b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/GainaxFansFest.html'">
-            <b>Gainax Fans Fest</b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/HappyDay.html'">
-            <b>Happy Day</b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/Otakusaurios.html'">
-            <b>Otakusaurios version primavera</b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/OtaShow.html'">
-            <b>OtaShow</b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/Presentacion.html'">
-            <b>Presentacion Comi-Con Torre Telefonica</b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/Presentacionfestigame.html'">
-            <b>Presentacion festigame</b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/SesionCaballerosdelZodiaco.html'">
-            <b>Sesion Caballeros del Zodiaco</b>
-	    </div>
-               <div onclick="location.href='../imagenes/2017/SesionChocolate.html'">
-            <b>Sesion Chocolate Cosplay Express</b>
-	    </div>
-	               <div onclick="location.href='../imagenes/2017/Sesiondefotos.html'">
-            <b>Sesion De Fotos Dia Internacional Del Cosplay</b>
-	    </div>	
-	               <div onclick="location.href='../imagenes/2017/SesionDomingo.html'">
-            <b>Sesion Domingo</b>
-	    </div>	
-	               <div onclick="location.href='../imagenes/2017/SesionMenji.html'">
-            <b>Sesion Menji</b>
-	    </div>				
-	               <div onclick="location.href='../imagenes/2017/Sesionyuko.html'">
-            <b>Sesion Yuko</b>
-	    </div>				
-	               <div onclick="location.href='../imagenes/2017/SuperJapanExpop1.html'">
-            <b>Super Japan Expo Dia Sabado</b>
-	    </div>				
-	               <div onclick="location.href='../imagenes/2017/SuperJapanExpop2.html'">
-            <b>Super Japan Expo Dia Domingo</b>
-	    </div>								
-	               <div onclick="location.href='../imagenes/2017/SuperSora.html'">
-            <b>Super Sora Festival</b>
-	    </div>				
-	               <div onclick="location.href='../imagenes/2017/ZombieWalk.html'">
-            <b>Zombie Walk</b>
-	    </div>		
-
-
-   </div>
-
-<div class="vol" >
-<a href="../index.html" class="boton">Volver</a>
-
-   </div>
-  </div>
-</div>
-
-    </body>
+        <div class="vol">
+            <a href="../index.html" class="boton">Volver</a>
+        </div>
+    </div>
+</body>
 </html>
