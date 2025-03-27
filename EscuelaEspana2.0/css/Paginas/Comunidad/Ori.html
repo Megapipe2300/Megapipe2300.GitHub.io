@@ -1,0 +1,91 @@
+<style>
+    .caja {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .caja h1 {
+        color: #0055ff;
+        text-align: center;
+        margin: 20px 0;
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .gallery-item {
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+        text-align: center;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @media screen and (max-width: 900px) {
+        .gallery-item {
+            flex: 0 0 calc(50% - 15px);
+            max-width: calc(50% - 15px);
+        }
+        
+        .caja h1 {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media screen and (max-width: 655px) {
+        .gallery-item {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin: 10px 0;
+        }
+        
+        .caja {
+            padding: 10px;
+        }
+        
+        .caja h1 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+        
+        .gallery-container {
+            gap: 10px;
+            padding: 5px;
+        }
+    }
+</style>
+
+<div class="caja">
+    <h1><b>ORIENTADORA</b></h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="Imagenes/Fotos.per/Ori/1.png" alt="Miembro de dirección 1">
+        </div>
+        <div class="gallery-item">
+            <img src="Imagenes/Fotos.per/Ori/2.png" alt="Miembro de dirección 2">
+        </div>
+
+    </div>
+</div>

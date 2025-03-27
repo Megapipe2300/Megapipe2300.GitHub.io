@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglamentos - Escuela España</title>
+    <style>
+        :root {
+            --primary-color: #0055ff;
+            --secondary-color: #ef8354;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+        }
+        
+        .documents-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 2em auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        .document-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .document-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .document-title {
+            color: var(--primary-color);
+            margin-bottom: 1em;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            font-weight: 700;
+        }
+        
+        .document-item {
+            margin: 1.5em 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .document-name {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 1em;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .document-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-width: 120px;
+        }
+        
+        .document-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 900px) {
+            .documents-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .document-card {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .documents-container {
+                padding: 0 15px;
+            }
+            
+            .document-title {
+                font-size: 1.4rem;
+            }
+            
+            .document-name {
+                font-size: 1rem;
+            }
+            
+            .document-button {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="documents-container">
+        <div class="document-card">
+            <h1 class="document-title">REGLAMENTOS</h1>
+            
+            <div class="document-item">
+                <p class="document-name">REGLAMENTO INTERNO</p>
+                <a href="PDF/Doc/Reg/RIEE 2024.PDF" class="document-button" target="_blank">
+                    VER DOCUMENTO
+                </a>
+            </div>
+        </div>
+        
+        <div class="document-card">
+            <h1 class="document-title">PLANES</h1>
+            
+            <div class="document-item">
+                <p class="document-name">PLAN DE APOYO A LA INCLUSIÓN</p>
+                <a href="PDF/Doc/Pla/PAI 2022.pdf" class="document-button" target="_blank">
+                    VER DOCUMENTO
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
