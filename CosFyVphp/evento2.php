@@ -1,16 +1,15 @@
 <?php
-include 'conexion.php'; // Asegúrate de que este archivo crea la conexión PDO como $pdo
+include 'conexion.php'; // AsegÃºrate de que este archivo crea la conexiÃ³n PDO como $pdo
 
 $year = isset($_GET['anio']) ? intval($_GET['anio']) : date('Y');
 $page_title = "Eventos Cosplay $year";
-$page_description = "Galería de eventos cosplay del año $year";
+$page_description = "GalerÃ­a de eventos cosplay del aÃ±o $year";
 
-// Obtener eventos del año seleccionado
-$sql = "SELECT id_eventos, nombre_evento, YEAR(fecha_evento) as anio  FROM eventos WHERE fecha_evento = ? ORDER BY nombre_evento";
+// Obtener eventos del aÃ±o seleccionado
+$sql = "SELECT id_eventos, nombre_evento, YEAR(fecha_evento) as anio  FROM eventos WHERE fecha_evento = $year ORDER BY nombre_evento";
 
 try{ 
-    $stmt = $pdo->prepare($sql); // Corregido: cambié $pd por $pdo
-    $stmt->bindParam(':year', $year, PDO::PARAM_INT);
+    $stmt = $pdo->prepare($sql); // Corregido: cambiÃ© $pd por $pdo
     $stmt->execute();
     
     $eventos = array();
@@ -35,7 +34,7 @@ try {
         }
     }
 } catch (PDOException $e) {
-    die("Error al obtener años: " . $e->getMessage());
+    die("Error al obtener aÃ±os: " . $e->getMessage());
 }
 
 
@@ -73,7 +72,7 @@ try {
             min-height: 100vh;
             box-sizing: border-box;
             position: relative;
-            padding-bottom: 80px; /* Espacio para el botón volver */
+            padding-bottom: 80px; /* Espacio para el botÃ³n volver */
         }
 
         .elemento {
@@ -182,7 +181,7 @@ try {
                     <?php endforeach; ?>
                 <?php else: ?>
                     <div style="width: 100%; text-align: center;">
-                        <strong>No hay eventos registrados para este año</strong>
+                        <strong>No hay eventos registrados para este aÃ±o</strong>
                     </div>
                 <?php endif; ?>
             </div>
