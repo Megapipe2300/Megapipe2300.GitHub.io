@@ -10,7 +10,7 @@ $password = '[Emilyt@300]'; // Reemplaza con tu contraseña
 
 try {
     // Cadena de conexión con SSL obligatorio
-    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require";
+    $dsn = "sqlsrv:Server=$host,$port;Database=$dbname";
     
     // Conexión PDO
     $pdo = new PDO($dsn, $user, $password, [
