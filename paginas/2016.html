@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Cosplay Fotos y Videos - Eventos 2016</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de eventos cosplay del año 2016 con fotos de Anime Matsuri, Comic Zone, Festivales y más">
+    <meta name="keywords" content="cosplay, fotos, eventos 2016, anime, festival, concurso">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CosplayFyV">
+    <style>
+        :root {
+            --primary-color: #bf2548;
+            --hover-color: #ff0000;
+            --bg-color: #1c1c1c;
+            --text-color: #ffffff;
+        }
+        
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.1rem;
+            background: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .elemento {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .elemento h1 {
+            text-align: center;
+            color: var(--text-color);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin: 20px 0 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 10px;
+            justify-content: center;
+        }   
+
+        .main div {
+            background-color: var(--primary-color);
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .main div:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .vol {
+        
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .boton {
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .boton:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        @media screen and (max-width: 768px) {
+            .main {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .boton {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+            
+            .elemento h1 {
+                font-size: 2.2rem;
+                margin: 15px 0 30px;
+            }
+            
+            .contenedor {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="elemento">
+            <h1>Eventos Cosplay 2016</h1>
+            
+            <div class="main">    
+                <div onclick="location.href='../imagenes/2016/AniversarioPacuman.html'">
+                    <strong>7° Aniversario Pacuman</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2016/AEXdomingoparte1.html'">
+                    <strong>AEX Domingo Parte 1</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2016/AEXdomingoparte2.html'">
+                    <strong>AEX Domingo Parte 2</strong>
+                </div>            
+                <div onclick="location.href='../imagenes/2016/AiNoDanzu.html'">
+                    <strong>Ai No Danzu</strong>
+                </div>         
+                <div onclick="location.href='../imagenes/2016/AnimeMatsuri-AkiParte1.html'">
+                    <strong>Anime Matsuri - Aki</strong>
+                </div>  
+                <div onclick="location.href='../imagenes/2016/AsianFestivalSabado.html'">
+                    <strong>Asian Festival Sábado</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2016/Bunnyfest.html'">
+                    <strong>Bunnyfest</strong>
+                </div>  
+                <div onclick="location.href='../imagenes/2016/Comi-condiasabado.html'">
+                    <strong>Comi-con Día Sábado</strong>
+                </div>            
+                <div onclick="location.href='../imagenes/2016/Comic-Zonediadomingo.html'">
+                    <strong>Comic-Zone Día Domingo</strong>
+                </div>    
+                <div onclick="location.href='../imagenes/2016/ConcursoGamer.html'">
+                    <strong>Concurso Cosplay Gamer</strong>
+                </div> 
+                <div onclick="location.href='../imagenes/2016/Diainternacionaldelcosplay.html'">
+                    <strong>Día Internacional Del Cosplay</strong>
+                </div>          
+                <div onclick="location.href='../imagenes/2016/ExpoDragonBall.html'">
+                    <strong>Expo Dragon Ball</strong>
+                </div>            
+                <div onclick="location.href='../imagenes/2016/Exponona.html'">
+                    <strong>Expo Nona</strong>
+                </div>             
+                <div onclick="location.href='../imagenes/2016/ExpoZ.html'">
+                    <strong>Expo Z</strong>
+                </div>         
+                <div onclick="location.href='../imagenes/2016/FantasyMatsuri3.html'">
+                    <strong>Fantasy Matsuri 3</strong>
+                </div>          
+                <div onclick="location.href='../imagenes/2016/FeriaGrumosaAniversario.html'">
+                    <strong>Feria Grumosa Aniversario</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2016/Festigamediadomingo.html'">
+                    <strong>Festigame Día Domingo</strong>
+                </div>
+                <div onclick="location.href='../imagenes/2016/FestivalLOL.html'">
+                    <strong>Festival LOL</strong>
+                </div>             
+                <div onclick="location.href='../imagenes/2016/FondaKawaii.html'">
+                    <strong>Fonda Kawaii</strong>
+                </div>                     
+                <div onclick="location.href='../imagenes/2016/HappyDays.html'">
+                    <strong>Happy Days</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2016/HaruMatsuri7.html'">
+                    <strong>Haru Matsuri 7 - Back to School</strong>
+                </div>    
+                <div onclick="location.href='../imagenes/2016/Inuyaneko2.html'">
+                    <strong>Inu Ya Neko 2</strong>
+                </div> 
+                <div onclick="location.href='../imagenes/2016/Juntacosplayp1.html'">
+                    <strong>Junta Cosplay Uno</strong>
+                </div>            
+                <div onclick="location.href='../imagenes/2016/Juntacosplayp2.html'">
+                    <strong>Junta Cosplay Dos</strong>
+                </div>          
+                <div onclick="location.href='../imagenes/2016/Juntacosplayp3.html'">
+                    <strong>Junta Cosplay Tres</strong>
+                </div> 
+                <div onclick="location.href='../imagenes/2016/JuntateamWings.html'">
+                    <strong>Junta Team Wings of Freedom - Shingeki no Kyojin</strong>
+                </div>            
+                <div onclick="location.href='../imagenes/2016/Juppongatana.html'">
+                    <strong>Juppongatana</strong>
+                </div> 
+                <div onclick="location.href='../imagenes/2016/KaminoChikara.html'">
+                    <strong>Kami No Chikara</strong>
+                </div> 
+                <div onclick="location.href='../imagenes/2016/NGU.html'">
+                    <strong>NGU</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2016/Otacusauriosp1.html'">
+                    <strong>Otacusaurios Uno</strong>
+                </div>       
+                <div onclick="location.href='../imagenes/2016/Otacusauriosp2.html'">
+                    <strong>Otacusaurios Dos</strong>
+                </div>             
+                <div onclick="location.href='../imagenes/2016/Otacuton.html'">
+                    <strong>Otakuton</strong>
+                </div>    
+                <div onclick="location.href='../imagenes/2016/OtaGamer.html'">
+                    <strong>OtaGamer</strong>
+                </div>    
+                <div onclick="location.href='../imagenes/2016/Otakushow.html'">
+                    <strong>Otakushow</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2016/Pokexpo.html'">
+                    <strong>PokExpo</strong>
+                </div>             
+                <div onclick="location.href='../imagenes/2016/Primerajunta.html'">
+                    <strong>Primera Junta Team Wings of Freedom</strong>
+                </div>          
+                <div onclick="location.href='../imagenes/2016/SegundaJuntaCosply.html'">
+                    <strong>Segunda Junta Cosplay</strong>
+                </div>          
+                <div onclick="location.href='../imagenes/2016/SesionDeFotos.html'">
+                    <strong>Sesión De Fotos</strong>
+                </div>             
+                <div onclick="location.href='../imagenes/2016/SesionFotograficaOtaku.html'">
+                    <strong>Sesión Fotográfica Otaku</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2016/SesionFotosSAO.html'">
+                    <strong>Sesión Fotos SAO</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2016/sesionjardinjapones.html'">
+                    <strong>Sesión Jardín Japonés</strong>
+                </div> 
+                <div onclick="location.href='../imagenes/2016/AJuppongatana.html'">
+                    <strong>Segundo Aniversario Juppongatana</strong>
+                </div> 
+                <div onclick="location.href='../imagenes/2016/2daSesiondefotos.html'">
+                    <strong>Segunda Sesión de Fotos Shingeki No Swag Cosplay</strong>
+                </div>           
+                <div onclick="location.href='../imagenes/2016/SuperZombieWalk.html'">
+                    <strong>Super Zombie Walk</strong>
+                </div>             
+                <div onclick="location.href='../imagenes/2016/Teamtokyoghoul.html'">
+                    <strong>Team Tokyo Ghoul</strong>
+                </div>            
+                <div onclick="location.href='../imagenes/2016/tercerasesion.html'">
+                    <strong>Tercera Sesión Meiji Cosplay Biblioteca de Santiago</strong>
+                </div>         
+                <div onclick="location.href='../imagenes/2016/UrbanGeekFest.html'">
+                    <strong>Urban Geek Fest</strong>
+                </div>         
+                <div onclick="location.href='../imagenes/2016/ZombieMaidCafe.html'">
+                    <strong>Zombie Maid Cafe</strong>
+                </div>                      
+            </div>
+        </div>
+           
+        <div class="vol">
+            <a href="../index.html" class="boton">Volver</a>
+        </div>      
+    </div>
+</body>
+</html>

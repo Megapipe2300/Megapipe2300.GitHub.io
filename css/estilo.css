@@ -1,0 +1,129 @@
+body {
+	font-family: Times New Roman;
+	font-size: 20px;
+        background:  #1c1c1c;  
+    
+}
+
+#contenedor
+{
+	
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+	
+}
+
+.elemento
+{
+
+	width: 98%;
+	height: 100%;
+       
+	
+}
+
+.elemento h1
+{
+	color: white;
+	font-size:40px;
+	text-align:center;
+	
+}
+
+.main
+{
+	
+        display:flex;
+	flex-wrap:wrap;
+	padding:10px;
+	align-content:center;
+	
+}	
+
+.main div
+{
+	background-color:#bf2548;
+	width:108px;
+	margin:10px;
+	text-align:center;
+	line-height:75px;
+	font-size:30px;
+	color:white;
+        cursor: pointer;
+	
+	
+}
+
+.main div:hover
+{
+    background:#ff0000;
+    transition: 0.2s;
+    
+}
+
+
+
+.marca h6
+{
+	
+color:white;
+float:right;
+margin-top:310px;
+	
+}
+
+
+
+span:hover + div {
+  display: block;
+}
+
+.year-link {
+    cursor: pointer;
+    /* Agrega estilos para que parezcan botones/enlaces */
+}
+
+.year-link:hover {
+    /* Efecto hover para mejor usabilidad */
+}
+
+@media screen and (max-width:655px)
+{
+	
+	body {
+	width: 100%;
+        height: auto;
+}
+	
+.main
+{
+    
+    
+    width: 100%;
+}
+
+
+.main div
+{
+    
+    width:120px;
+    
+}
+	
+	.elemento
+	{
+		width:90%;
+		
+	}
+	
+.marca h6
+{
+	
+   color:white;
+   text-align: center;
+   margin-top: 10px;
+	
+}
+	
+}
