@@ -67,7 +67,7 @@ h1 {
     top: 20px;
     right: 30px;
     color: white;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -153,4 +153,5 @@ h1 {
         top: 10px;
         right: 15px;
     }
+
 }
