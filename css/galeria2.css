@@ -47,36 +47,6 @@ h1 {
     display: none;
 }
 
-#lightbox.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    padding: 2px;
-    background-color: black;
-    border: 2px solid white;
-}
-
-/* Botón de cerrar (X) para el lightbox */
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 1001;
-}
-
-.close-btn:hover {
-    color: #bf2548;
-}
 
 .vol {
     width: 10%;
