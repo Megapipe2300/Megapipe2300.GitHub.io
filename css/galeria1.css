@@ -39,9 +39,9 @@ h1 {
 }
 
 .boton {
+    background: #D900D9; /*color botón*/
     float: left;
     padding: 20px; /*espacio alrededor texto*/
-    background-color: #bf2548; /*color botón*/
     color: #ffffff; /*color texto*/
     text-decoration: none; /*decoración texto*/
     text-transform: uppercase; /*capitalización texto*/
@@ -49,7 +49,10 @@ h1 {
 }
 
     .boton:hover {
-        background-color: #ff0000;
+        background: linear-gradient(135deg, #ff66ff, #cc66ff);
+        transform: scale(1.08) skewX(-2deg);
+        box-shadow: 0 0 35px #ff66ff, 0 0 60px #cc66ff;
+        border-color: #ffff00;
     }
 
 
