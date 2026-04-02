@@ -2,7 +2,7 @@
 body {
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
-    background: #1c1c1c;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff00cc);
     color: white;
     margin: 0;
     padding: 0;
@@ -22,12 +22,12 @@ body {
     box-sizing: border-box;
 }
 
-    .elemento h1 {
-        text-align: center;
-        color: #ffffff;
-        font-size: clamp(2rem, 5vw, 4.5rem);
-        margin: 20px 0;
-    }
+ .elemento h1 {
+     text-align: center;
+     color: #ffffff;
+     font-size: clamp(2rem, 5vw, 4.5rem);
+     margin: 20px 0;
+ }
 
 .main {
     display: flex;
@@ -38,7 +38,7 @@ body {
 }
 
     .main div {
-        background-color: #bf2548;
+        background: #D900D9;
         width: 280px;
         min-height: 50px;
         padding: 10px;
@@ -54,11 +54,12 @@ body {
         border-radius: 4px;
     }
 
-        .main div:hover {
-            background-color: #ff0000;
-            transform: scale(1.03);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
+    .main div:hover {
+        background: linear-gradient(135deg, #ff66ff, #cc66ff);
+        transform: scale(1.08) skewX(-2deg);
+        box-shadow: 0 0 35px #ff66ff, 0 0 60px #cc66ff;
+        border-color: #ffff00;
+    }
 
 .vol {
     bottom: 20px;
@@ -68,19 +69,20 @@ body {
 
 .boton {
     padding: 12px 24px;
-    background-color: #bf2548;
+    background: #D900D9;
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 1em;
     display: inline-block;
-    transition: all 0.3s ease;
     font-weight: bold;
 }
 
     .boton:hover {
-        background-color: #ff0000;
-        transform: translateY(-2px);
+        background: linear-gradient(135deg, #ff66ff, #cc66ff);
+        transform: scale(1.08) skewX(-2deg);
+        box-shadow: 0 0 35px #ff66ff, 0 0 60px #cc66ff;
+        border-color: #ffff00;
     }
 
 @media screen and (max-width: 768px) {
