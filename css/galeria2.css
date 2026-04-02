@@ -1,7 +1,7 @@
 body {
     font-family: Times New Roman;
     font-size: 20px;
-    background: #1c1c1c;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff00cc);
 }
 
 .contenedor {
