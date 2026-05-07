@@ -292,7 +292,7 @@ h1 {
 
     /* Lightbox en móviles pequeños */
     #lightbox img {
-        max-height:55vh;
+        max-height:45vh;
         max-width: 92%;
         border-radius: 8px;
         border: 2px solid white;
