@@ -151,7 +151,7 @@ h1 {
             .close-btn { width: 45px; height: 45px; font-size: 38px; top: 15px; right: 15px; }
         }
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 665px) {
             h1 { font-size: 32px; }
             .grid img { height: 170px; }
             .accion-btn span { font-size: 0.7rem; }
