@@ -237,7 +237,7 @@ h1 {
 
     /* Lightbox en tablets */
     #lightbox img {
-        max-height: 35vh;
+        max-height: 1vh;
         border-radius: 10px;
     }
 
