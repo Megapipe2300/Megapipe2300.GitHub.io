@@ -1,18 +1,28 @@
 body {
-    font-family: Times New Roman;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc, #ff00cc);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 20px 15px 40px 15px;
 }
 
 .contenedor {
-    width: 99%;
-    height: 99%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.2);
+    border-radius: 32px;
+    padding: 20px 15px;
+    backdrop-filter: blur(2px);
 }
 
 h1 {
     color: #ffffff;
     text-align: center;
     font-size: 60px;
+    text-shadow: 4px 4px 12px #aa00aa, 0 0 20px #ff88ff;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
 }
 
 .grid {
@@ -20,98 +30,116 @@ h1 {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     justify-content: center;
     align-items: start;
-    gap: 15px;
-    padding: 0 10px;
+    gap: 18px;
+    padding: 0 5px;
 }
 
-.grid img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-    .grid img:hover {
-      
-        transform: scale(1.08) skewX(-2deg);
-        box-shadow: 0 0 35px #ff66ff, 0 0 60px #cc66ff;
+    .grid img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 18px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+        border: 2px solid rgba(255,255,200,0.6);
     }
+
+        .grid img:hover {
+            transform: scale(1.05) skewX(-1.5deg);
+            box-shadow: 0 0 28px #ff66ff, 0 0 48px #cc66ff;
+            border-color: #ffffaa;
+        }
+
+/* LIGHTBOX */
 
 #lightbox {
     position: fixed;
-    z-index: 1000;
+    z-index: 2000;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0,.9);
+    background-color: rgba(0, 0, 0, 0.94);
+    backdrop-filter: blur(10px);
     display: none;
-}
-
-#lightbox.active {
-    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-#lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    padding: 2px;
-    background-color: black;
-    border: 2px solid white;
-}
+    #lightbox.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-/* Botón de cerrar (X) para el lightbox */
+    #lightbox img {
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 20px;
+        border: 3px solid white;
+        box-shadow: 0 20px 35px rgba(0,0,0,0.5);
+        background-color: #111;
+    }
+
+/* Botón de cerrar (X) - CORREGIDO */
+
 .close-btn {
-    position: absolute;
+    position: fixed;
     top: 25px;
     right: 35px;
     color: white;
-    font-size: 40px;
+    font-size: 48px;
     font-weight: bold;
     cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 1001;
-    background: rgba(0,0,0,0.5); /* Fondo semitransparente para que resalte */
-    width: 50px;
-    height: 50px;
+    z-index: 2100;
+    background: rgba(0,0,0,0.6);
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-family: Arial, sans-serif;
+    transition: 0.2s;
+    font-family: monospace;
 }
 
-.close-btn:hover {
-    color: #ff44cc;  /* 👈 Color llamativo al hover */
-    background: rgba(0,0,0,0.8);
-    transform: scale(1.1);
-}
+    .close-btn:hover {
+        background: #ff44cc;
+        transform: scale(1.1);
+        color: black;
+    }
+
+/* Botón Volver */
 
 .vol {
-    width: 10%;
-    height: 10%;
-    margin-top:1em;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    margin-left: 15px;
 }
 
 .boton {
-    background: #D900D9; /*color botón*/
-    float: left;
-    padding: 20px; /*espacio alrededor texto*/
-    color: #ffffff; /*color texto*/
-    text-decoration: none; /*decoración texto*/
-    text-transform: uppercase; /*capitalización texto*/
-    border-radius: 1em;
+    background: #D900D9;
+    padding: 14px 28px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    font-weight: bold;
+    transition: 0.25s;
+    display: inline-block;
+    font-size: 1rem;
+    box-shadow: 0 5px 12px black;
 }
 
     .boton:hover {
         background: linear-gradient(135deg, #ff66ff, #cc66ff);
-        transform: scale(1.08) skewX(-2deg);
-        box-shadow: 0 0 35px #ff66ff, 0 0 60px #cc66ff;
-        border-color: #ffff00;}
+        transform: scale(1.05) skewX(-2deg);
+        box-shadow: 0 0 25px #ff66ff;
+    }
 
         @media screen and (max-width: 1200px) {
             .grid {
