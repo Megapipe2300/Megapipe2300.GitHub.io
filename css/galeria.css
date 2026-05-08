@@ -215,54 +215,12 @@ h1 {
     }
 
 /* ========== MEDIA QUERIES PARA MÓVILES ========== */
-
-/* Tablets y móviles grandes */
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size: 42px;
-    }
-
-    .grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 12px;
-    }
-
-        .grid img {
-            height: 200px;
-        }
-
-    .boton {
-        padding: 12px 25px;
-        font-size: 14px;
-    }
-
-    /* Lightbox en tablets */
-    #lightbox img {
-        max-height: 55vh;
-        border-radius: 10px;
-    }
-
-    .acciones-bar {
-        gap: 15px;
-        padding: 8px 18px;
-    }
-
-    .accion-btn {
-        padding: 8px 14px;
-        font-size: 1.2rem;
-        min-height: 44px;
-    }
-
-        .accion-btn span {
-            font-size: 0.75rem;
-        }
-
-    .close-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 35px;
-        top: 15px;
-        right: 15px;
+    .grid img {
+        height: 150px;      /* Altura fija */
+        width: 150px;       /* Ancho fijo (cuadrado) */
+        margin: 0 auto;     /* Centrar */
     }
 }
+
 
