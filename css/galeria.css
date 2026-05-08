@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
@@ -34,22 +40,22 @@ h1 {
     padding: 0 5px;
 }
 
-.grid img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 18px;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-    border: 2px solid rgba(255,255,200,0.6);
-}
+    .grid img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 18px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+        border: 2px solid rgba(255,255,200,0.6);
+    }
 
-.grid img:hover {
-    transform: scale(1.05) skewX(-1.5deg);
-    box-shadow: 0 0 28px #ff66ff, 0 0 48px #cc66ff;
-    border-color: #ffffaa;
-}
+        .grid img:hover {
+            transform: scale(1.05) skewX(-1.5deg);
+            box-shadow: 0 0 28px #ff66ff, 0 0 48px #cc66ff;
+            border-color: #ffffaa;
+        }
 
 /* ========== LIGHTBOX OPTIMIZADO PARA CELULAR ========== */
 #lightbox {
@@ -67,9 +73,9 @@ h1 {
     flex-direction: column;
 }
 
-#lightbox.active {
-    display: flex;
-}
+    #lightbox.active {
+        display: flex;
+    }
 
 /* Contenedor de la imagen (importante para móvil) */
 .lightbox-container {
@@ -132,23 +138,23 @@ h1 {
     touch-action: manipulation;
 }
 
-.accion-btn i {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.5rem;
-}
+    .accion-btn i {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.5rem;
+    }
 
-.accion-btn span {
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
+    .accion-btn span {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
 
-.accion-btn:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffdd99;
-    box-shadow: 0 0 15px #ff99ff;
-}
+    .accion-btn:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffdd99;
+        box-shadow: 0 0 15px #ff99ff;
+    }
 
 /* Botón like cuando está activo */
 .like-btn.liked {
@@ -178,11 +184,11 @@ h1 {
     touch-action: manipulation;
 }
 
-.close-btn:hover {
-    background: #ff44cc;
-    transform: scale(1.1);
-    color: black;
-}
+    .close-btn:hover {
+        background: #ff44cc;
+        transform: scale(1.1);
+        color: black;
+    }
 
 /* Botón Volver */
 .vol {
@@ -207,11 +213,11 @@ h1 {
     touch-action: manipulation;
 }
 
-.boton:hover {
-    background: linear-gradient(135deg, #ff66ff, #cc66ff);
-    transform: scale(1.05) skewX(-2deg);
-    box-shadow: 0 0 25px #ff66ff;
-}
+    .boton:hover {
+        background: linear-gradient(135deg, #ff66ff, #cc66ff);
+        transform: scale(1.05) skewX(-2deg);
+        box-shadow: 0 0 25px #ff66ff;
+    }
 
 /* ========== MEDIA QUERIES PARA MÓVILES ========== */
 
@@ -226,9 +232,9 @@ h1 {
         gap: 12px;
     }
 
-    .grid img {
-        height: 200px;
-    }
+        .grid img {
+            height: 200px;
+        }
 
     .boton {
         padding: 12px 25px;
@@ -237,7 +243,7 @@ h1 {
 
     /* Lightbox en tablets */
     #lightbox img {
-        max-height: 55vh;
+        max-height: 50vh;
         border-radius: 10px;
     }
 
@@ -252,9 +258,9 @@ h1 {
         min-height: 44px;
     }
 
-    .accion-btn span {
-        font-size: 0.75rem;
-    }
+        .accion-btn span {
+            font-size: 0.75rem;
+        }
 
     .close-btn {
         width: 45px;
@@ -264,6 +270,8 @@ h1 {
         right: 15px;
     }
 }
+
+/* hay que crear uno general para responsibe*/
 
 /* Móviles pequeños (iPhone SE, Galaxy S8, etc) */
 @media screen and (max-width: 480px) {
@@ -280,10 +288,10 @@ h1 {
         gap: 10px;
     }
 
-    .grid img {
-        height: 170px;
-        border-radius: 14px;
-    }
+        .grid img {
+            height: 170px;
+            border-radius: 14px;
+        }
 
     .boton {
         padding: 10px 20px;
@@ -292,10 +300,10 @@ h1 {
 
     /* Lightbox en móviles pequeños */
     #lightbox img {
-        max-height:50vh;
+        max-height: 55vh;
         max-width: 92%;
         border-radius: 8px;
-        border: 2px solid red;
+        border: 2px solid white;
     }
 
     .lightbox-container {
@@ -314,13 +322,13 @@ h1 {
         min-height: 40px;
     }
 
-    .accion-btn i {
-        font-size: 1.3rem;
-    }
+        .accion-btn i {
+            font-size: 1.3rem;
+        }
 
-    .accion-btn span {
-        font-size: 0.65rem;
-    }
+        .accion-btn span {
+            font-size: 0.65rem;
+        }
 
     .close-btn {
         width: 40px;
@@ -342,7 +350,8 @@ h1 {
     }
 
     #lightbox img {
-        max-height: 35vh;
+        max-height: 45vh;
+        background:red;
     }
 
     /* Opcional: ocultar texto de botones, solo iconos */
