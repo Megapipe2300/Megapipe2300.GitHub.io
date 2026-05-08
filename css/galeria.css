@@ -215,11 +215,67 @@ h1 {
 
 /* ========== MEDIA QUERIES PARA MÓVILES ========== */
 
-/* Móviles pequeños (iPhone SE, Galaxy S8, etc) */
-@media screen and (max-width: 768px) {
-    .grid img {
-        height: 150px; /* Altura fija */
-        width: 150px; /* Ancho fijo (cuadrado) */
-        margin: 0 auto; /* Centrar */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 15px 10px 30px 10px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .grid {
+        gap: 10px;
+    }
+
+        .grid img {
+            height: 170px;
+            border-radius: 14px;
+        }
+
+    .boton {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    /* Lightbox en móviles pequeños */
+    #lightbox img {
+        max-height: 55vh;
+        max-width: 92%;
+        border-radius: 8px;
+        border: 2px solid white;
+    }
+
+    .lightbox-container {
+        padding: 5px;
+    }
+
+    .acciones-bar {
+        gap: 10px;
+        padding: 6px 12px;
+        margin-top: 15px;
+    }
+
+    .accion-btn {
+        padding: 6px 12px;
+        font-size: 1rem;
+        min-height: 40px;
+    }
+
+        .accion-btn i {
+            font-size: 1.3rem;
+        }
+
+        .accion-btn span {
+            font-size: 0.65rem;
+        }
+
+    .close-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+        top: 10px;
+        right: 10px;
     }
 }
