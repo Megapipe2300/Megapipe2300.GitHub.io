@@ -14,7 +14,7 @@ body {
     min-height: 100vh;
     box-sizing: border-box;
     position: relative;
-    padding-bottom: 5px; /* Espacio para el botón volver */
+    padding-bottom: 5px; /* Espacio para el botÃ³n volver */
 }
 
 .elemento {
@@ -24,11 +24,12 @@ body {
 }
 
 .elemento h1 {
-     text-align: center;
-     color: #ffffff;
-     font-size: clamp(2rem, 5vw, 4.5rem);
-     margin: 20px 0;
-     font-size: 80px;
+    color: #ffffff;
+text-align: center;
+font-size: 60px;
+text-shadow: 4px 4px 12px #aa00aa, 0 0 20px #ff88ff;
+letter-spacing: 2px;
+margin-bottom: 25px;
     }
 
 .main {
