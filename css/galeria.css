@@ -279,3 +279,11 @@ h1 {
         right: 10px;
     }
 }
+
+ @media screen and (max-width: 480px) {
+            h1 { font-size: 32px; }
+            .grid img { height: 170px; }
+            .accion-btn span { font-size: 0.7rem; }
+            .accion-btn i { font-size: 1.4rem; }
+            .acciones-bar { gap: 12px; padding: 6px 12px; }
+        }
