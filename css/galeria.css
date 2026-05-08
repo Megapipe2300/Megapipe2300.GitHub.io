@@ -34,22 +34,22 @@ h1 {
     padding: 0 5px;
 }
 
-    .grid img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-        cursor: pointer;
-        border-radius: 18px;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-        border: 2px solid rgba(255,255,200,0.6);
-    }
+.grid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,200,0.6);
+}
 
-        .grid img:hover {
-            transform: scale(1.05) skewX(-1.5deg);
-            box-shadow: 0 0 28px #ff66ff, 0 0 48px #cc66ff;
-            border-color: #ffffaa;
-        }
+.grid img:hover {
+    transform: scale(1.05) skewX(-1.5deg);
+    box-shadow: 0 0 28px #ff66ff, 0 0 48px #cc66ff;
+    border-color: #ffffaa;
+}
 
 /* ========== LIGHTBOX OPTIMIZADO PARA CELULAR ========== */
 #lightbox {
@@ -67,9 +67,9 @@ h1 {
     flex-direction: column;
 }
 
-    #lightbox.active {
-        display: flex;
-    }
+#lightbox.active {
+    display: flex;
+}
 
 /* Contenedor de la imagen (importante para móvil) */
 .lightbox-container {
@@ -132,23 +132,23 @@ h1 {
     touch-action: manipulation;
 }
 
-    .accion-btn i {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.5rem;
-    }
+.accion-btn i {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
 
-    .accion-btn span {
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-    }
+.accion-btn span {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
 
-    .accion-btn:hover {
-        transform: scale(1.05);
-        background: rgba(255, 255, 255, 0.2);
-        color: #ffdd99;
-        box-shadow: 0 0 15px #ff99ff;
-    }
+.accion-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffdd99;
+    box-shadow: 0 0 15px #ff99ff;
+}
 
 /* Botón like cuando está activo */
 .like-btn.liked {
@@ -178,11 +178,11 @@ h1 {
     touch-action: manipulation;
 }
 
-    .close-btn:hover {
-        background: #ff44cc;
-        transform: scale(1.1);
-        color: black;
-    }
+.close-btn:hover {
+    background: #ff44cc;
+    transform: scale(1.1);
+    color: black;
+}
 
 /* Botón Volver */
 .vol {
@@ -207,30 +207,122 @@ h1 {
     touch-action: manipulation;
 }
 
-    .boton:hover {
-        background: linear-gradient(135deg, #ff66ff, #cc66ff);
-        transform: scale(1.05) skewX(-2deg);
-        box-shadow: 0 0 25px #ff66ff;
-    }
+.boton:hover {
+    background: linear-gradient(135deg, #ff66ff, #cc66ff);
+    transform: scale(1.05) skewX(-2deg);
+    box-shadow: 0 0 25px #ff66ff;
+}
 
 /* ========== MEDIA QUERIES PARA MÓVILES ========== */
+/* LAS FOTOS AHORA SON CUADRADAS EN MÓVIL */
 
+/* Pantallas hasta 768px (tablets y móviles grandes) */
+@media screen and (max-width: 768px) {
+    h1 { 
+        font-size: 42px; 
+    }
+    
+    .grid { 
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+        gap: 12px; 
+    }
+    
+    /* 🔥 CLAVE: imágenes CUADRADAS en móvil */
+    .grid img { 
+        height: auto;           /* Quitamos altura fija */
+        aspect-ratio: 1 / 1;   /* Fuerza cuadrado perfecto */
+        object-fit: cover;     
+        border-radius: 14px;
+    }
+    
+    .boton {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+    
+    .acciones-bar { 
+        gap: 20px; 
+        padding: 8px 20px; 
+    }
+    
+    .accion-btn { 
+        padding: 6px 16px; 
+        font-size: 1.4rem; 
+    }
+    
+    .accion-btn span { 
+        font-size: 0.8rem; 
+    }
+    
+    .close-btn { 
+        width: 45px; 
+        height: 45px; 
+        font-size: 38px; 
+        top: 15px; 
+        right: 15px; 
+    }
+}
 
- @media screen and (max-width: 768px) {
-            h1 { font-size: 42px; }
-            .grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-            .grid img { height: 200px; }
-            .boton {padding: 10px 20px;font-size: 12px;}    
-            .acciones-bar { gap: 20px; padding: 8px 20px; }
-            .accion-btn { padding: 6px 16px; font-size: 1.4rem; }
-            .accion-btn span { font-size: 0.8rem; }     
-            .close-btn { width: 45px; height: 45px; font-size: 38px; top: 15px; right: 15px; }
-        }
+/* Pantallas hasta 665px (móviles medianos) */
+@media screen and (max-width: 665px) {
+    h1 { 
+        font-size: 32px; 
+    }
+    
+    .grid { 
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+        gap: 10px; 
+    }
+    
+    /* 🔥 CLAVE: imágenes CUADRADAS también aquí */
+    .grid img { 
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    
+    .accion-btn span { 
+        font-size: 0.7rem; 
+    }
+    
+    .accion-btn i { 
+        font-size: 1.4rem; 
+    }
+    
+    .acciones-bar { 
+        gap: 12px; 
+        padding: 6px 12px; 
+    }
+}
 
-  @media screen and (max-width:665px) {
-            h1 { font-size: 32px; }
-            .grid img { height: 170px; }
-            .accion-btn span { font-size: 0.7rem; }
-            .accion-btn i { font-size: 1.4rem; }
-            .acciones-bar { gap: 12px; padding: 6px 12px; }
-        }
+/* Pantallas muy pequeñas (320px - 480px) */
+@media screen and (max-width: 480px) {
+    .grid { 
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+        gap: 8px; 
+    }
+    
+    .grid img { 
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+}
+
+/* Para pantalla 1080x2340 específicamente */
+@media screen and (min-width: 1080px) and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+    
+    .grid img {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+}
