@@ -44,20 +44,23 @@ border: 2px solid white;
 }
 
 .boton {
-    background: #D900D9; /*color botón*/
-    float: left;
-    padding: 20px; /*espacio alrededor texto*/
-    color: #ffffff; /*color texto*/
-    text-decoration: none; /*decoración texto*/
-    text-transform: uppercase; /*capitalización texto*/
-    border-radius: 1em;
+    background: #D900D9;
+ padding: 14px 28px;
+ color: #ffffff;
+ text-decoration: none;
+ text-transform: uppercase;
+ border-radius: 2rem;
+ font-weight: bold;
+ transition: 0.25s;
+ display: inline-block;
+ font-size: 1rem;
+ box-shadow: 0 5px 12px black;
 }
 
     .boton:hover {
         background: linear-gradient(135deg, #ff66ff, #cc66ff);
-        transform: scale(1.08) skewX(-2deg);
-        box-shadow: 0 0 35px #ff66ff, 0 0 60px #cc66ff;
-        border-color: #ffff00;
+        transform: scale(1.05) skewX(-2deg);
+        box-shadow: 0 0 25px #ff66ff;
     }
 
 
