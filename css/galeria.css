@@ -46,7 +46,7 @@ h1 {
 }
 
 .grid img:hover {
-    transform: scale(1.05) skewX(-1.5deg);
+    transform: scale(1.10) skewX(-1.5deg);
     box-shadow: 0 0 28px #ff66ff, 0 0 48px #cc66ff;
     border-color: #ffffaa;
 }
