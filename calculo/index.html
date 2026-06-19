@@ -2,11 +2,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login/css/estilos.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <title>login y registro</title>
    </head>
 <body>
-<h1> Hola Mundo</h1>
+    <div class="contenedor">
+    <div class="caja1">
+        <h1> Ingrese Monto</h1>
+         <input type="number" class="monto" id="monto_input" placeholder="Monto Mes"  />
+         <button type="button" id="monto_btn"  >Ingresa </button>
+         <button type="button" id="Limpiesa_monto_btn"  >Limpiesa </button>
+        <p id="monto_mostrar">Monto: $0.00</p>
+         </div>
+    <div class="caja2">
+        <h1>Descuentos</h1>
+           <table id="tabla_descuentos" border="1">
+                <thead>
+                    <tr>
+                        <th>total</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="cuerpo_tabla">
+                    <tr>
+                        <td colspan="3" style="text-align: center; color: #999;">No hay descuentos</td>
+                    </tr>
+                </tbody>
+            </table>
 
+        <button type="button" id="limpiesa_tabla_btn" >limpiesa </button>
+
+    </div>
+    <div class="caja3">
+        <h1>Ingrese Descuento</h1>
+         <input type="number" class="descuento" id="descuento_input" placeholder="Ingrese Descuento"  />
+         <button type="button" id="descuento_ing_btn" >Insertar </button>
+         <button type="button" id="limpiesa_des_btn" >limpiesa </button>
+         <button type="button" id="limpiesa_total_btn" >Limpiar todo </button>
+
+    </div>
+
+        <script src="js/funcion.js"></script>
+</div>
 </body>
 </html>
