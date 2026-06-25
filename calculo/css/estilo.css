@@ -1,26 +1,364 @@
+/* ========== RESET Y ESTILOS BASE ========== */
 * {
-margin:0px;
-padding:0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
+/* ========== CONTENEDOR PRINCIPAL ========== */
 .contenedor {
-    background:
-    
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    transition: all 0.3s ease;
 }
 
-.caja1 {
-    background:red;
+/* ========== TARJETAS (CAJAS) ========== */
+.caja1, .caja2, .caja3 {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.caja2 {
-    background: green;
-    float:left;
+    .caja1:hover, .caja2:hover, .caja3:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+/* ========== TÍTULOS ========== */
+h1 {
+    color: #2d3748;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea;
+    display: inline-block;
 }
 
-.caja3 {
-    background: orange;
-   float:right;
+/* ========== INPUTS ========== */
+input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    color: #2d3748;
+    outline: none;
 }
+
+    input[type="number"]:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    input[type="number"]:hover {
+        border-color: #a0aec0;
+    }
+
+    /* Eliminar flechas de número */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* ========== BOTONES ========== */
+input[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* Botón principal (Agregar Sueldo) */
+#monto_btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+    #monto_btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    #monto_btn:active {
+        transform: translateY(0);
+    }
+
+/* Botón de descuento */
+#descuento_btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+    #descuento_btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+    }
+
+    #descuento_btn:active {
+        transform: translateY(0);
+    }
+
+/* Botones de limpieza */
+#lipiesabase, #limpiesa_des_btn, #limpiesa_tabla_btn {
+    background: #edf2f7;
+    color: #4a5568;
+}
+
+    #lipiesabase:hover, #limpiesa_des_btn:hover, #limpiesa_tabla_btn:hover {
+        background: #e2e8f0;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #lipiesabase:active, #limpiesa_des_btn:active, #limpiesa_tabla_btn:active {
+        transform: translateY(0);
+    }
+
+/* ========== TABLA ========== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+th {
+    padding: 12px 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 10px 15px;
+    text-align: center;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover td {
+    background: #f7fafc;
+}
+
+/* ========== TEXTO DE MONTO ========== */
+#monto_mostrar, #monto_total, #total_descuentos_mostrar {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px;
+    margin: 10px 0;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    text-align: center;
+}
+
+#monto_mostrar {
+    color: #667eea;
+    border-color: #667eea;
+}
+
+#monto_total {
+    color: #48bb78;
+    border-color: #48bb78;
+}
+
+#total_descuentos_mostrar {
+    color: #f56565;
+    border-color: #f56565;
+}
+
+/* ========== ETIQUETAS DE DESCUENTO EN TABLA ========== */
+.descuento-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #f56565;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+    .descuento-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .descuento-item .valor {
+        font-weight: 600;
+        color: #2d3748;
+    }
+
+    .descuento-item .eliminar {
+        background: #fed7d7;
+        color: #c53030;
+        border: none;
+        border-radius: 6px;
+        padding: 4px 10px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+        .descuento-item .eliminar:hover {
+            background: #fc8181;
+            color: white;
+            transform: scale(1.05);
+        }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .caja1, .caja2, .caja3 {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    input[type="button"] {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    input[type="number"] {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .caja1, .caja2, .caja3 {
+        padding: 15px;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.descuento-item {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* ========== ESTILOS PARA MENSAJES DE ALERTA ========== */
+.alert {
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 2px solid #48bb78;
+}
+
+.alert-error {
+    background: #fed7d7;
+    color: #742a2a;
+    border: 2px solid #f56565;
+}
+
+.alert-warning {
+    background: #fefcbf;
+    color: #744210;
+    border: 2px solid #ecc94b;
+}
+
+/* ========== SCROLLBAR PERSONALIZADA ========== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #764ba2;
+    }

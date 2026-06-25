@@ -3,47 +3,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
-    <title>login y registro</title>
-   </head>
+    <title>CALCULO</title>
+</head>
 <body>
     <div class="contenedor">
-    <div class="caja1">
-        <h1> Ingrese Monto</h1>
-         <input type="number" class="monto" id="monto_input" placeholder="Monto Mes"  />
-         <button type="button" id="monto_btn"  >Ingresa </button>
-         <button type="button" id="Limpiesa_monto_btn"  >Limpiesa </button>
-          <p id="monto_mostrar">Monto: $0</p>
-         </div>
-    <div class="caja2">
-        <h1>Descuentos</h1>
-           <table id="tabla_descuentos" border="1">
+        <div class="caja1">
+            <h1>Ingrese Monto</h1>
+            <input type="number" id="monto_base" placeholder="Monto Mes" />
+            <input type="button" id="monto_btn" value="agregar sueldo" onclick="agregarmonto();" />
+            <input type="button" id="lipiesabase" value="Limpiesa" onclick="limpiarmontobtn();">
+            <p id="monto_mostrar">Monto: $0</p>
+            <p id="monto_total">Monto Total: $0</p>
+        </div>
+        <div class="caja2">
+            <h1>Descuentos</h1>
+            <table  border="1">
                 <thead>
                     <tr>
-                        <th>total</th>
-                        
+                       <th>Descuento</th>
                     </tr>
                 </thead>
-                <tbody id="cuerpo_tabla">
-                    <tr>
-                        <td colspan="3" style="text-align: center; color: #999;">No hay descuentos</td>
-                    </tr>
+                <tbody id="datos">
                 </tbody>
             </table>
+            <p id="total_descuentos_mostrar">Total Descuentos: $0</p>
+            <input type="button" id="limpiesa_tabla_btn" value="Limpiar Tabla" onclick="limpiatabla();" />
+          </div>
+        <div class="caja3">
+            <h1>Ingrese Descuento</h1>
+            <input type="number" id="descuentobase"  placeholder="Ingrese Descuento" />
+            <input type="button" id="descuento_btn" value="descuento" onclick="agregardecuento();" />
+            <input type="button" id="limpiesa_des_btn" value="Limpiar" onclick="limpiesades()" />
+           
 
-         <p id="monto_total">Monto: $0</p>
-        <button type="button" id="limpiesa_tabla_btn" >limpiesa </button>
-
-    </div>
-    <div class="caja3">
-        <h1>Ingrese Descuento</h1>
-         <input type="number" class="descuento" id="descuento_input" placeholder="Ingrese Descuento"  />
-         <button type="button" id="descuento_ing_btn" >Insertar </button>
-         <button type="button" id="limpiesa_des_btn" >limpiesa </button>
-         <button type="button" id="limpiesa_total_btn" >Limpiar todo </button>
-
-    </div>
-
+        </div>
         <script src="js/funcion.js"></script>
-</div>
+    </div>
 </body>
 </html>

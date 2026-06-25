@@ -1,29 +1,31 @@
-// ========== VARIABLES GLOBALES ==========
-let montoBase = 0;
-let descuentos = [];
-
 // ========== OBTENER ELEMENTOS DEL DOM ==========
+
+const montobase = document.getElementById("monto_base");
 const montobtn = document.getElementById("monto_btn");
-const limpiarmontobtn = document.getElementById("Limpiesa_monto_btn");
-const descuentoingbtn = document.getElementById("descuento_ing_btn");
+const limpiarbtn = document.getElementById('lipiesabase');
+const descuentobase = document.getElementById("descuentobase");
+const descuentobtn = document.getElementById("descuento_btn");
 const limpiesatablabtn = document.getElementById("limpiesa_tabla_btn");
 const limpiesadesbtn = document.getElementById("limpiesa_des_btn");
 const limpiesatotalbtn = document.getElementById("limpiesa_total_btn");
-const montoinput = document.getElementById("monto_input");
-const descuentoinput = document.getElementById("descuento_input");
+const datos = document.getElementById("datos");
 const cuerpotabla = document.getElementById("cuerpo_tabla");
 const montoMostrar = document.getElementById("monto_mostrar");
-const totalMostrar = document.getElementById("total_mostrar");
+const montototal = document.getElementById("monto_total");
 const totalDescuentosMostrar = document.getElementById("total_descuentos_mostrar");
 
-// ========== FUNCIÓN: FORMATEAR NÚMERO SIN DECIMALES ==========
+
+
+// ========== FUNCIÓN: INGRESO ==========
 function formatearNumero(numero) {
     return Math.round(numero);
 }
 
-// ========== 1. FUNCIÓN: INGRESAR MONTO ==========
-montobtn.addEventListener("click", function () {
-    const valor = parseFloat(montoinput.value);
+function agregarmonto()
+{
+    //agregan
+
+    const valor = parseFloat(montobase.value);
 
     if (isNaN(valor) || valor <= 0) {
         alert("⚠️ Por favor, ingresa un monto válido mayor a 0");
@@ -32,55 +34,124 @@ montobtn.addEventListener("click", function () {
 
     montoBase = valor;
     montoMostrar.textContent = `Monto: $${formatearNumero(montoBase)}`;
-    montoinput.value = "";
-    actualizarTotal();
-    actualizarTotalDescuentos();
-});
+    montoMostrar.style.color = "green";
+    montobase.value = "";
 
-// ========== 2. FUNCIÓN: LIMPIAR MONTO ==========
-limpiarmontobtn.addEventListener("click", function () {
-    if (montoBase === 0) {
-        alert("No hay monto para limpiar");
-        return;
+}
+
+
+function agregardecuento() {
+
+    var ttr = document.createElement("tr");
+    var tbody = document.getElementById("datos")
+    var monto = document.getElementById("monto_base");
+
+    // 1. Obtener el valor del input
+
+    var celda = document.createElement("td")
+    var textcelda = document.createTextNode(descuentobase.value)
+
+    celda.appendChild(textcelda)
+    ttr.appendChild(celda)
+    //envia los valores a la tabla
+    tbody.appendChild(ttr)
+    descuentobase.value = "";
+    descuentobase.focus();
+
+    //suma lo que esta en tabla descuento
+    var total = 0;
+    var filas = tbody.querySelectorAll("tr")
+    for (var i = 0; i < filas.length; i++) {
+        var celdas = filas[i].querySelectorAll("td")
+        if (celdas.length > 0) {
+            var texto = celdas[0].textContent;
+            var numero = parseFloat(texto);
+            if (!isNaN(numero)) {
+                total += numero;
+            }
+        }
+
+    }
+   // va sumando los descuento
+    // Mostrar total descuentos en el HTML
+    document.getElementById("total_descuentos_mostrar").innerHTML = "Total Descuentos: $" + Math.round(total);
+
+    // Calcular total final (Monto - Descuentos)
+    
+    var totalfinal =  montoBase - total   // ← Usar la variable "total" que es un número
+
+    montototal.textContent = `Monto Total: $${formatearNumero(totalfinal)}`;
+
+
+    if (totalfinal <= 50000) {
+
+        montototal.style.color = "red";
+
+
+    } else if (totalfinal <= 100000) {
+        montototal.style.color = "#ff9800";
+
+    } else if (totalfinal >= 100000) {
+        montototal.style.color = "green";
     }
 
-    if (confirm("¿Limpiar el monto base?")) {
-        montoBase = 0;
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+// ==========  FUNCIÓN: LIMPIAR ==========
+function limpiarmontobtn() {
+
+    if (confirm("¿Deseas borrar el monto ingresado?")) { 
+        montobase.value = "";
         montoMostrar.textContent = "Monto: $0";
-        actualizarTotal();
-        actualizarTotalDescuentos();
+        montoMostrar.style.color = "black"
+        montobase.focus();
     }
-});
+
+}
+
+
+
+function limpiatabla() {
+    var tbody = document.getElementById("datos")
+    if (confirm("¿Deseas borrar el datos de la tabla?")) {
+        datos.innerHTML = tbody.innerHTML = `
+        <tr>
+            <td colspan="3" style="text-align: center; color: #999;">
+                No hay descuentos
+            </td>
+        </tr>
+    `;
+        totalDescuentosMostrar.textContent = "Monto: $0";
+        montototal.textContent = "Monto total: $0";
+        montototal.style.color = "black";
+    }
+}
+
+function limpiesades() {
+    if (confirm("¿Deseas borrar descuento?")) {
+        descuentobase.value = "";
+        descuentobase.focus();
+    }
+}
+
+
 
 // ========== 3. FUNCIÓN: INSERTAR DESCUENTO ==========
-descuentoingbtn.addEventListener("click", function () {
-    if (montoBase === 0) {
-        alert("⚠️ Primero ingresa un monto base");
-        return;
-    }
 
-    const valor = parseFloat(descuentoinput.value);
 
-    if (isNaN(valor) || valor <= 0) {
-        alert("⚠️ Por favor, ingresa un descuento válido mayor a 0");
-        return;
-    }
-
-    // Verificar que el descuento no sea mayor que el total actual
-    const totalActual = calcularTotal();
-    if (valor > totalActual) {
-        alert(`⚠️ El descuento no puede ser mayor que el saldo actual ($${formatearNumero(totalActual)})`);
-        return;
-    }
-
-    // Agregar descuento al array
-    descuentos.push(valor);
-    descuentoinput.value = "";
-    actualizarTabla();
-    actualizarTotal();
-    actualizarTotalDescuentos();
-});
-
+/**
 // ========== 4. FUNCIÓN: ACTUALIZAR TABLA ==========
 function actualizarTabla() {
     if (descuentos.length === 0) {
@@ -110,6 +181,22 @@ function actualizarTabla() {
     cuerpotabla.innerHTML = html;
 }
 
+//===================
+
+function limpiardescuento() {
+
+    if (confirm("¿Deseas borrar el monto ingresado?")) {
+        descuentobase.value = "";
+        descuentobase.focus();
+    }
+
+}
+
+
+
+
+/*
+
 // ========== 5. FUNCIÓN: ELIMINAR DESCUENTO ==========
 function eliminarDescuento(index) {
     if (confirm(`¿Eliminar el descuento $${formatearNumero(descuentos[index])}?`)) {
@@ -120,40 +207,11 @@ function eliminarDescuento(index) {
     }
 }
 
-// ========== 6. FUNCIÓN: CALCULAR TOTAL ==========
-function calcularTotal() {
-    const totalDescuentos = descuentos.reduce((sum, desc) => sum + desc, 0);
-    return montoBase - totalDescuentos;
-}
 
-// ========== 7. FUNCIÓN: ACTUALIZAR TOTAL ==========
-function actualizarTotal() {
-    const total = calcularTotal();
 
-    // Asegurar que total sea un número
-    const totalNumerico = Number(total) || 0;
 
-    if (totalNumerico < 0) {
-        totalMostrar.textContent = `Total a Pagar: $0 (¡En negativo!)`;
-        totalMostrar.style.color = "red";
-    } else {
-        totalMostrar.textContent = `Total a Pagar: $${formatearNumero(totalNumerico)}`;
-        totalMostrar.style.color = "#333";
-    }
-}
 
-// ========== 8. FUNCIÓN: ACTUALIZAR TOTAL DE DESCUENTOS ==========
-function actualizarTotalDescuentos() {
-    const totalDescuentos = descuentos.reduce((sum, desc) => sum + desc, 0);
-    totalDescuentosMostrar.textContent = `Total Descuentos: $${formatearNumero(totalDescuentos)}`;
 
-    // Cambiar color si hay descuentos
-    if (totalDescuentos > 0) {
-        totalDescuentosMostrar.style.color = "#f44336";
-    } else {
-        totalDescuentosMostrar.style.color = "#333";
-    }
-}
 
 // ========== 9. FUNCIÓN: LIMPIAR TABLA ==========
 limpiesatablabtn.addEventListener("click", function () {
@@ -185,21 +243,28 @@ limpiesatotalbtn.addEventListener("click", function () {
         montoMostrar.textContent = "Monto: $0";
         totalMostrar.textContent = "Total a Pagar: $0";
         totalMostrar.style.color = "#333";
+        totalMostrar.style.fontWeight = "normal";
         totalDescuentosMostrar.textContent = "Total Descuentos: $0";
         totalDescuentosMostrar.style.color = "#333";
         actualizarTabla();
     }
 });
 
+*/
+
+
+/*
 // ========== 12. INGRESAR CON TECLA ENTER ==========
-montoinput.addEventListener("keypress", function (event) {
+montobase.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         montobtn.click();
     }
 });
 
-descuentoinput.addEventListener("keypress", function (event) {
+descuentobase.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
-        descuentoingbtn.click();
+        descuentobtn.click();
     }
 });
+
+*/
