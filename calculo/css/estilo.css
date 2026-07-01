@@ -36,12 +36,10 @@ body {
     padding: 25px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   
 }
 
-    .caja1:hover, .caja2:hover, .caja3:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
+
 
 /* ========== TÍTULOS ========== */
 h1 {
@@ -56,6 +54,19 @@ h1 {
 
 /* ========== INPUTS ========== */
 input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    color: #2d3748;
+    outline: none;
+}
+
+input[type="text"] {
     width: 100%;
     padding: 12px 15px;
     margin-bottom: 12px;

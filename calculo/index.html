@@ -8,38 +8,44 @@
 <body>
     <div class="contenedor">
         <div class="caja1">
-            <h1>Ingrese Monto</h1>
-            <input type="number" id="monto_base" placeholder="Monto Mes" />
-            <input type="button" id="monto_btn" value="agregar sueldo" onclick="agregarmonto();" />
-            <input type="button" id="lipiesabase" value="Limpiesa" onclick="limpiarmontobtn();">
-            <p id="monto_mostrar">Monto: $0</p>
-            <p id="monto_total">Monto Total: $0</p>
+            <form>
+                <h1>Ingrese Monto</h1>
+                <input type="number" id="monto_base" placeholder="Monto Mes" />
+                <input type="button" id="monto_btn" value="agregar sueldo" onclick="agregarmonto();" />
+                <input type="button" id="lipiesabase" value="Limpiesa" onclick="limpiarmontobtn();">
+                <p id="monto_mostrar">Monto: $0</p>
+                <p id="monto_total">Monto Total: $0</p>
+            </form>
         </div>
         <div class="caja3">
-            <h1>Ingrese Descuento</h1>
-            <input type="number" id="descuentobase" placeholder="Ingrese Descuento" />
-            <input type="button" id="descuento_btn" value="descuento" onclick="agregardecuento();" />
-            <input type="button" id="limpiesa_des_btn" value="Limpiar" onclick="limpiesades()" />
+            <form>
+                <h1>Ingrese Descuento</h1>
 
+                <input type="number" id="descuentobase" placeholder="Ingrese Descuento" />
+                <input type="text"   id="descripcion_input" placeholder="Descripción" />
+                <input type="button" id="descuento_btn" value="descuento" onclick="agregardecuento();" />
+                <input type="button" id="limpiesa_des_btn" value="Limpiar" onclick="limpiesades()" />
+            </form>
 
         </div>
 
         <div class="caja2">
+            <form>
             <h1>Descuentos</h1>
-            
+
             <table border="1">
                 <thead>
                     <tr>
                         <th>Descuento</th>
-                      
+                        <th>Descripcion</th>
                     </tr>
                 </thead>
                 <tbody id="datos">
-                   
                 </tbody>
             </table>
             <p id="total_descuentos_mostrar">Total Descuentos: $0</p>
             <input type="button" id="limpiesa_tabla_btn" value="Limpiar Tabla" onclick="limpiatabla();" />
+            </form>
         </div>
 
 
