@@ -4,7 +4,6 @@ const montobase = document.getElementById("monto_base");
 const montobtn = document.getElementById("monto_btn");
 const limpiarbtn = document.getElementById('lipiesabase');
 const descuentobase = document.getElementById("descuentobase");
-
 const descuentobtn = document.getElementById("descuento_btn");
 const limpiesatablabtn = document.getElementById("limpiesa_tabla_btn");
 const limpiesadesbtn = document.getElementById("limpiesa_des_btn");
@@ -18,22 +17,25 @@ const totalDescuentosMostrar = document.getElementById("total_descuentos_mostrar
 
 
 // ========== FUNCIÓN: INGRESO ==========
+
 function formatearNumero(numero) {
-    return Math.round(numero);
+    return Math.round(numero).toLocaleString('es-ES');
 }
+
 
 function agregarmonto()
 {
     //agregan
-
+    
     const valor = parseFloat(montobase.value);
+
+
     if (isNaN(valor) || valor <= 0) {
         alert("⚠️ Por favor, ingresa un descuento válido mayor a 0");
         return;
     }
-
-
     
+
     montoBase = valor;
   
     montoMostrar.textContent = `Monto: $${formatearNumero(montoBase)}`;
@@ -50,19 +52,37 @@ function agregarmonto()
 
 function agregardecuento() {
 
-
     var ttr = document.createElement("tr");
     var tbody = document.getElementById("datos")
     var monto = document.getElementById("monto_base");
     var des = document.getElementById("descuentobase");
     var desc = document.getElementById("descripcion_input");
 
-
     //validar que el descuento no sea mayor al monto
 
+    if (des >= monto) {
+        alert("El monto ingresado no puede ser mayor al monto base")
+        des.value = "";
+
+    }
 
 
+    //formato para punto
 
+    /*
+function format_currency(num) {
+    const currencyFormatter = new Intl.NumberFormat("en-US", {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+    
+    return currencyFormatter.format(num);
+}
+
+        */
+    
 
 
     // 1. Obtener el valor del input
@@ -105,16 +125,19 @@ function agregardecuento() {
             var texto = celdas[0].textContent;
            
             var numero = parseFloat(texto);
+
             if (!isNaN(numero)) {
                 total += numero;
             }
         }
 
     }
-   // va sumando los descuento
+    // va sumando los descuento
+
+
     // Mostrar total descuentos en el HTML
 
-    document.getElementById("total_descuentos_mostrar").innerHTML = "Total Descuentos: $" + Math.round(total);
+    document.getElementById("total_descuentos_mostrar").innerHTML = "Total Descuentos: $" + formatearNumero(total);
 
     // Calcular total final (Monto - Descuentos)
 
@@ -139,6 +162,7 @@ function agregardecuento() {
 
 }
 
+/*
 function actualizarTabla() {
     const tbody = document.getElementById("datos");
 
@@ -167,7 +191,7 @@ function actualizarTabla() {
 
     tbody.innerHTML = html;
 }
-
+*/
 
 // ========== ELIMINAR DESCUENTO ==========
 function eliminarDescuento(index) {
