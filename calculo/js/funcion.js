@@ -59,14 +59,14 @@ function agregardecuento() {
     var desc = document.getElementById("descripcion_input");
 
     //validar que el descuento no sea mayor al monto
-
+/*
     if (des >= monto) {
         alert("El monto ingresado no puede ser mayor al monto base")
         des.value = "";
 
     }
 
-
+*/
     //formato para punto
 
     /*
