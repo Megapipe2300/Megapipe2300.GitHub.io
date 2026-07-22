@@ -1,220 +1,365 @@
-// ========== OBTENER ELEMENTOS DEL DOM ==========
+// ========== VARIABLES GLOBALES ==========
+let montoBase = 0;
 
+// ========== OBTENER ELEMENTOS DEL DOM ==========
 const montobase = document.getElementById("monto_base");
 const montobtn = document.getElementById("monto_btn");
 const limpiarbtn = document.getElementById('lipiesabase');
 const descuentobase = document.getElementById("descuentobase");
+const descripcionInput = document.getElementById("descripcion_input");
 const descuentobtn = document.getElementById("descuento_btn");
 const limpiesatablabtn = document.getElementById("limpiesa_tabla_btn");
 const limpiesadesbtn = document.getElementById("limpiesa_des_btn");
-const limpiesatotalbtn = document.getElementById("limpiesa_total_btn");
 const datos = document.getElementById("datos");
-const cuerpotabla = document.getElementById("cuerpo_tabla");
 const montoMostrar = document.getElementById("monto_mostrar");
 const montototal = document.getElementById("monto_total");
 const totalDescuentosMostrar = document.getElementById("total_descuentos_mostrar");
 
-
-
-// ========== FUNCIÓN: INGRESO ==========
-
-function formatearNumero(numero) {
+// ========== FUNCIÓN: FORMATEAR CON PUNTOS ==========
+function formatearConPuntos(numero) {
     return Math.round(numero).toLocaleString('es-ES');
 }
 
-
-function agregarmonto()
-{
-    //agregan
+// ========== FUNCIÓN: FORMATEAR INPUT ==========
+function formatearInput(input) {
+    let soloNumeros = input.value.replace(/[^0-9]/g, '');
     
-    const valor = parseFloat(montobase.value);
-
-
-    if (isNaN(valor) || valor <= 0) {
-        alert("⚠️ Por favor, ingresa un descuento válido mayor a 0");
+    if (soloNumeros === '') {
+        input.value = '';
         return;
     }
     
-
-    montoBase = valor;
-  
-    montoMostrar.textContent = `Monto: $${formatearNumero(montoBase)}`;
-    montoMostrar.style.color = "green";
-    montobase.value = "";
-    montobase.disabled = true;
-    montobase.style.backgroundColor = "#f0f0f0"; // Cambiar color de fondo
-    montobtn.disabled = true; 
-    montobtn.style.opacity = "0.6";   // Cambiar opacidad del botón
-
-}
-
-
-
-function agregardecuento() {
-
-    var ttr = document.createElement("tr");
-    var tbody = document.getElementById("datos")
-    var monto = document.getElementById("monto_base");
-    var des = document.getElementById("descuentobase");
-    var desc = document.getElementById("descripcion_input");
-
-    //validar que el descuento no sea mayor al monto
-/*
-    if (des >= monto) {
-        alert("El monto ingresado no puede ser mayor al monto base")
-        des.value = "";
-
+    let numero = parseInt(soloNumeros, 10);
+    
+    if (isNaN(numero) || numero === 0) {
+        input.value = '';
+        return;
     }
-
-*/
-    //formato para punto
-
-    /*
-function format_currency(num) {
-    const currencyFormatter = new Intl.NumberFormat("en-US", {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    });
     
-    return currencyFormatter.format(num);
+    input.value = numero.toLocaleString('es-ES');
 }
 
-        */
+// ========== FUNCIÓN: OBTENER VALOR SIN PUNTOS ==========
+function obtenerValorSinPuntos(input) {
+    return parseFloat(input.value.replace(/\./g, '')) || 0;
+}
+
+// ========== DESHABILITAR CAMPOS DE DESCUENTO ==========
+function deshabilitarCamposDescuento() {
+    descripcionInput.disabled = true;
+    descripcionInput.style.backgroundColor = "#f0f0f0";
+    descripcionInput.style.cursor = "not-allowed";
+    descuentobase.disabled = true;
+    descuentobase.style.backgroundColor = "#f0f0f0";
+    descuentobase.style.cursor = "not-allowed";
+    descuentobtn.disabled = true;
+    descuentobtn.style.opacity = "0.6";
+    descuentobtn.style.cursor = "not-allowed";
+    limpiesadesbtn.disabled = true;
+    limpiesadesbtn.style.opacity = "0.6";
+    limpiesadesbtn.style.cursor = "not-allowed";
+    limpiesatablabtn.disabled = true;
+    limpiesatablabtn.style.opacity = "0.6";
+    limpiesatablabtn.style.cursor = "not-allowed";
+
+
+
+
+}
+
+// ========== HABILITAR CAMPOS DE DESCUENTO ==========
+function habilitarCamposDescuento() {
+    descripcionInput.disabled = false;
+    descripcionInput.style.backgroundColor = "white";
+    descripcionInput.style.cursor = "text";
+    descuentobase.disabled = false;
+    descuentobase.style.backgroundColor = "white";
+    descuentobase.style.cursor = "text";
+    descuentobtn.disabled = false;
+    descuentobtn.style.opacity = "1";
+    descuentobtn.style.cursor = "pointer";
+    limpiesadesbtn.disabled = false;
+    limpiesadesbtn.style.opacity = "1";
+    limpiesadesbtn.style.cursor = "pointer";
+    limpiesatablabtn.disabled = false;
+    limpiesatablabtn.style.opacity = "1";
+    limpiesatablabtn.style.cursor = "pointer";
+}
+
+// ========== 1. AGREGAR MONTO ==========
+function agregarmonto() {
+    const valorSinPuntos = montobase.value.replace(/\./g, '');
+    const valor = parseFloat(valorSinPuntos);
     
-
-
-    // 1. Obtener el valor del input
-
-    var celda1 = document.createElement("td")
-    var celda2 = document.createElement("td")
-
-    var textcelda1 = document.createTextNode(descuentobase.value);
-    var textcelda2 = document.createTextNode(descripcion_input.value);
-
-
-    // Agregar cada texto a su celda correspondiente
-
-    celda1.appendChild(textcelda1)
-    celda2.appendChild(textcelda2)
-
-    // Agregar las celdas a la fila
-
-    ttr.appendChild(celda1);
-    ttr.appendChild(celda2);
+    if (isNaN(valor) || valor <= 0) {
+        alert("⚠️ Por favor, ingresa un monto válido mayor a 0");
+        montobase.focus();
+        montobase.value = '';
+        return;
+    }
     
-    // Agregar la fila a la tabla
-
-    tbody.appendChild(ttr)
-
-    //envia los valores a la tabla
-
+    montoBase = valor;
+    montoMostrar.textContent = `Monto: $${formatearConPuntos(montoBase)}`;
+    montoMostrar.style.color = "green";
+    montobase.value = formatearConPuntos(valor);
+    montobase.disabled = true;
+    montobase.style.backgroundColor = "#f0f0f0";
+    montobtn.disabled = true;
+    montobtn.style.opacity = "0.6";
+    montobtn.style.cursor = "not-allowed";
     
-    descuentobase.value = "";
-    descripcion_input.value = "";
-    descuentobase.focus();
+    
+    habilitarCamposDescuento();
+    document.getElementById("descuentobase").focus();
+}
 
-    //suma lo que esta en tabla descuento
-    var total = 0;
-    var filas = tbody.querySelectorAll("tr")
+// ========== 2. AGREGAR DESCUENTO ==========
+function agregardecuento() {
+    var tbody = document.getElementById("datos");
+    
+    if (montoBase === 0) {
+        alert("⚠️ Primero ingresa un monto base");
+        montobase.focus();
+        return;
+    }
+    
+    var descripcion = descripcionInput.value.trim();
+    if (!descripcion) {
+        alert("⚠️ La descripción no puede estar vacía");
+        descripcionInput.focus();
+        return;
+    }
+    
+    var descuentoValor = obtenerValorSinPuntos(descuentobase);
+    
+    if (isNaN(descuentoValor) || descuentoValor <= 0) {
+        alert("⚠️ Por favor, ingresa un descuento válido mayor a 0");
+        descuentobase.focus();
+        descuentobase.value = '';
+        return;
+    }
+    
+    // Calcular total actual de descuentos
+    var totalDescuentosActual = 0;
+    var filas = tbody.querySelectorAll("tr");
     for (var i = 0; i < filas.length; i++) {
-        var celdas = filas[i].querySelectorAll("td")
+        var celdas = filas[i].querySelectorAll("td");
         if (celdas.length > 0) {
-            var txt = celdas[0].textContent;
             var texto = celdas[0].textContent;
-           
-            var numero = parseFloat(texto);
-
+            var numero = parseFloat(texto.replace(/[$.]/g, ''));
             if (!isNaN(numero)) {
-                total += numero;
+                totalDescuentosActual += numero;
             }
         }
-
     }
-    // va sumando los descuento
-
-
-    // Mostrar total descuentos en el HTML
-
-    document.getElementById("total_descuentos_mostrar").innerHTML = "Total Descuentos: $" + formatearNumero(total);
-
-    // Calcular total final (Monto - Descuentos)
-
-    var totalfinal =  montoBase - total   // ← Usar la variable "total" que es un número
-
-    montototal.textContent = `Monto Total: $${formatearNumero(totalfinal)}`;
-
-    if (totalfinal == 0) {
-        alert("⚠️Quedaste pato ");
-
-    }else if (totalfinal <= 50000) {
-
-        montototal.style.color = "red";
-
-
-    } else if (totalfinal <= 100000) {
-        montototal.style.color = "#ff9800";
-
-    } else if (totalfinal >= 100000) {
-        montototal.style.color = "green";
-    }
-
-}
-
-/*
-function actualizarTabla() {
-    const tbody = document.getElementById("datos");
-
-    if (descuentos.length === 0) {
-        tbody.innerHTML = `
-            <tr>
-                <td colspan="2" style="text-align: center; color: #999;">No hay descuentos</td>
-            </tr>
-        `;
+    
+    var saldoDisponible = montoBase - totalDescuentosActual;
+    if (descuentoValor > saldoDisponible) {
+        alert(`⚠️ El descuento no puede ser mayor que el saldo disponible ($${formatearConPuntos(saldoDisponible)})`);
+        descuentobase.focus();
+        descuentobase.value = '';
         return;
     }
+    
+    // ========== CREAR FILA ==========
+    var ttr = document.createElement("tr");
+    
+    // ========== CELDA 1: DESCUENTO CON PUNTOS ==========
 
-    let html = "";
-    descuentos.forEach((descuento, index) => {
-        html += `
-            <tr>
-                <td>$${formatearNumero(descuento)}</td>
-                <td>
-                    <button class="btn-eliminar" onclick="eliminarDescuento(${index})">
-                        ❌ Eliminar
-                    </button>
-                </td>
-            </tr>
-        `;
-    });
+    var celda1 = document.createElement("td");
+    var textCelda1 = document.createTextNode("$" + formatearConPuntos(descuentoValor));
+    celda1.appendChild(textCelda1);
+    ttr.appendChild(celda1);
+    
+    // ========== CELDA 2: DESCRIPCIÓN ==========
 
-    tbody.innerHTML = html;
+    var celda2 = document.createElement("td");
+    var textCelda2 = document.createTextNode(descripcion);
+    celda2.appendChild(textCelda2);
+    ttr.appendChild(celda2);
+    
+    // ========== CELDA 3: BOTÓN ELIMINAR ==========
+    var celda3 = document.createElement("td");
+    var btnEliminar = document.createElement("button");
+    btnEliminar.textContent = "❌";
+    btnEliminar.style.border = "none";
+    btnEliminar.style.background = "transparent";
+    btnEliminar.style.cursor = "pointer";
+    btnEliminar.style.fontSize = "16px";
+    btnEliminar.style.padding = "5px 10px";
+    btnEliminar.title = "Eliminar descuento";
+    
+    btnEliminar.onclick = function() {
+        if (confirm(`¿Eliminar el descuento "${descripcion}" por $${formatearConPuntos(descuentoValor)}?`)) {
+            tbody.removeChild(ttr);
+            calcularTotales();
+        }
+    };
+    
+    celda3.appendChild(btnEliminar);
+    ttr.appendChild(celda3);
+    
+    tbody.appendChild(ttr);
+    
+    descripcionInput.value = "";
+    descuentobase.value = "";
+    descripcionInput.focus();
+    
+    calcularTotales();
 }
-*/
 
-// ========== ELIMINAR DESCUENTO ==========
-function eliminarDescuento(index) {
-    if (confirm(`¿Eliminar el descuento $${formatearNumero(descuentos[index])}?`)) {
-        descuentos.splice(index, 1);
-        actualizarTabla();
-        actualizarTotal();
-        actualizarTotalDescuentos();
+// ========== 3. CALCULAR TOTALES ==========
+function calcularTotales() {
+    var tbody = document.getElementById("datos");
+    
+    // ========== SUMAR DESCUENTOS ==========
+    var totalDescuentos = 0;
+    var filas = tbody.querySelectorAll("tr");
+    
+    for (var i = 0; i < filas.length; i++) {
+        var celdas = filas[i].querySelectorAll("td");
+        if (celdas.length > 0) {
+            // Obtener el texto y eliminar $ y . para sumar
+            var texto = celdas[0].textContent;
+            var numero = parseFloat(texto.replace(/[$.]/g, ''));
+            
+            if (!isNaN(numero)) {
+                totalDescuentos += numero;
+            }
+        }
     }
+    
+    // ========== MOSTRAR TOTALES CON PUNTOS ==========
+
+    totalDescuentosMostrar.textContent = "Total Descuentos: $" + formatearConPuntos(totalDescuentos);
+    totalDescuentosMostrar.style.color = totalDescuentos > 0 ? "#f44336" : "#333";
+    
+    var totalFinal = montoBase - totalDescuentos;
+    montototal.textContent = `Monto Total: $${formatearConPuntos(totalFinal)}`;
+    
+    if (totalFinal == 0) {
+
+        alert("⚠️ Quedaste pato");
+        montototal.style.color = "red";
+
+        // Deshabilitar campos de descuento
+        descuentobase.disabled = true;
+        descuentobase.style.opacity = "0.6";
+        descuentobase.style.cursor = "not-allowed";
+        descuentobase.style.backgroundColor = "#f0f0f0";
+
+        descripcionInput.disabled = true;
+        descripcionInput.style.opacity = "0.6";
+        descripcionInput.style.cursor = "not-allowed";
+        descripcionInput.style.backgroundColor = "#f0f0f0";
+
+        descuentobtn.disabled = true;
+        descuentobtn.style.opacity = "0.6";
+        descuentobtn.style.cursor = "not-allowed";
+
+        limpiesadesbtn.disabled = true;
+        limpiesadesbtn.style.opacity = "0.6";
+        limpiesadesbtn.style.cursor = "not-allowed";
+
+        // Deshabilitar también limpiar tabla
+        limpiesatablabtn.disabled = false;
+        limpiarbtn.disabled = false;
+
+    } else if (totalFinal <= 50000) {
+        // Monto bajo
+        montototal.style.color = "red";
+
+        // Habilitar campos de descuento
+        descuentobase.disabled = false;
+        descuentobase.style.opacity = "1";
+        descuentobase.style.cursor = "text";
+        descuentobase.style.backgroundColor = "white";
+
+        descripcionInput.disabled = false;
+        descripcionInput.style.opacity = "1";
+        descripcionInput.style.cursor = "text";
+        descripcionInput.style.backgroundColor = "white";
+
+        descuentobtn.disabled = false;
+        descuentobtn.style.opacity = "1";
+        descuentobtn.style.cursor = "pointer";
+
+        limpiesadesbtn.disabled = false;
+        limpiesadesbtn.style.opacity = "1";
+        limpiesadesbtn.style.cursor = "pointer";
+
+        limpiesatablabtn.disabled = false;
+        limpiesatablabtn.style.opacity = "1";
+        limpiesatablabtn.style.cursor = "pointer";
+
+    } else if (totalFinal <= 100000) {
+        // Monto medio
+        montototal.style.color = "#ff9800";
+
+        // Habilitar campos de descuento
+        descuentobase.disabled = false;
+        descuentobase.style.opacity = "1";
+        descuentobase.style.cursor = "text";
+        descuentobase.style.backgroundColor = "white";
+
+        descripcionInput.disabled = false;
+        descripcionInput.style.opacity = "1";
+        descripcionInput.style.cursor = "text";
+        descripcionInput.style.backgroundColor = "white";
+
+        descuentobtn.disabled = false;
+        descuentobtn.style.opacity = "1";
+        descuentobtn.style.cursor = "pointer";
+
+        limpiesadesbtn.disabled = false;
+        limpiesadesbtn.style.opacity = "1";
+        limpiesadesbtn.style.cursor = "pointer";
+
+        limpiesatablabtn.disabled = false;
+        limpiesatablabtn.style.opacity = "1";
+        limpiesatablabtn.style.cursor = "pointer";
+
+    } else {
+        // Monto alto
+        montototal.style.color = "green";
+
+        // Habilitar campos de descuento
+        descuentobase.disabled = false;
+        descuentobase.style.opacity = "1";
+        descuentobase.style.cursor = "text";
+        descuentobase.style.backgroundColor = "white";
+
+        descripcionInput.disabled = false;
+        descripcionInput.style.opacity = "1";
+        descripcionInput.style.cursor = "text";
+        descripcionInput.style.backgroundColor = "white";
+
+        descuentobtn.disabled = false;
+        descuentobtn.style.opacity = "1";
+        descuentobtn.style.cursor = "pointer";
+
+        limpiesadesbtn.disabled = false;
+        limpiesadesbtn.style.opacity = "1";
+        limpiesadesbtn.style.cursor = "pointer";
+
+        limpiesatablabtn.disabled = false;
+        limpiesatablabtn.style.opacity = "1";
+        limpiesatablabtn.style.cursor = "pointer";
+    }
+
+
+
 }
 
+// ========== 4. LIMPIAR MONTO ==========
 
-
-
-// ==========  FUNCIÓN: LIMPIAR ==========
 function limpiarmontobtn() {
 
-    if (confirm("¿Deseas borrar el monto ingresado?")) { 
+    if (confirm("¿Deseas borrar el monto ingresado?")) {
         montobase.value = "";
         montoMostrar.textContent = "Monto: $0";
-        montoMostrar.style.color = "black";
+        montoMostrar.style.color = "#667eea";
         montobase.focus();
-
 
         // ========== HABILITAR CAMPO Y BOTÓN ==========
         montobase.disabled = false;           // Habilitar el input
@@ -222,11 +367,14 @@ function limpiarmontobtn() {
         montobtn.disabled = false;            // Habilitar el botón
         montobtn.style.opacity = "1";         // Restaurar opacidad
         montobtn.style.cursor = "pointer";    // Restaurar cursor
+
+        deshabilitarCamposDescuento();
+        montobase.focus();
     }
 
 }
 
-
+// ========== 5. LIMPIAR TABLA ==========
 
 function limpiatabla() {
     var tbody = document.getElementById("datos")
@@ -240,114 +388,48 @@ function limpiatabla() {
     `;
         totalDescuentosMostrar.textContent = "Monto: $0";
         montototal.textContent = "Monto total: $0";
-        montototal.style.color = "black";
-    }
-}
-
-function limpiesades() {
-   
-    descuentobase.value = "";
-    descripcion_input.value = "";
+        montototal.style.color = "#48bb78";
         descuentobase.focus();
- 
-}
-
-
-
-// ========== 3. FUNCIÓN: INSERTAR DESCUENTO ==========
-
-
-/**
-// ========== 4. FUNCIÓN: ACTUALIZAR TABLA ==========
-function actualizarTabla() {
-    if (descuentos.length === 0) {
-        cuerpotabla.innerHTML = `
-            <tr>
-                <td colspan="3" style="text-align: center; color: #999;">No hay descuentos</td>
-            </tr>
-        `;
-        return;
     }
-
-    let html = "";
-    descuentos.forEach((descuento, index) => {
-        html += `
-            <tr>
-                <td>${index + 1}</td>
-                <td>$${formatearNumero(descuento)}</td>
-                <td>
-                    <button class="btn-eliminar" onclick="eliminarDescuento(${index})">
-                        ❌
-                    </button>
-                </td>
-            </tr>
-        `;
-    });
-
-    cuerpotabla.innerHTML = html;
 }
 
+// ========== 6. LIMPIAR CAMPOS ==========
+function limpiesades() {
+    descripcionInput.value = "";
+    descuentobase.value = "";
+    descripcionInput.focus();
 }
-}
 
-
-
-
-
-
-
-// ========== 9. FUNCIÓN: LIMPIAR TABLA ==========
-limpiesatablabtn.addEventListener("click", function () {
-    if (descuentos.length === 0) {
-        alert("No hay descuentos para limpiar");
-        return;
-    }
-
-    if (confirm("¿Estás seguro de eliminar todos los descuentos?")) {
-        descuentos = [];
-        actualizarTabla();
-        actualizarTotal();
-        actualizarTotalDescuentos();
-    }
+// ========== 7. FORMATEAR INPUTS ==========
+montobase.addEventListener('input', function() {
+    formatearInput(this);
 });
 
-// ========== 10. FUNCIÓN: LIMPIAR CAMPO DESCUENTO ==========
-limpiesadesbtn.addEventListener("click", function () {
-    descuentoinput.value = "";
+descuentobase.addEventListener('input', function() {
+    formatearInput(this);
 });
 
-// ========== 11. FUNCIÓN: LIMPIAR TODO ==========
-limpiesatotalbtn.addEventListener("click", function () {
-    if (confirm("¿Estás seguro de limpiar todo?")) {
-        montoBase = 0;
-        descuentos = [];
-        montoinput.value = "";
-        descuentoinput.value = "";
-        montoMostrar.textContent = "Monto: $0";
-        totalMostrar.textContent = "Total a Pagar: $0";
-        totalMostrar.style.color = "#333";
-        totalMostrar.style.fontWeight = "normal";
-        totalDescuentosMostrar.textContent = "Total Descuentos: $0";
-        totalDescuentosMostrar.style.color = "#333";
-        actualizarTabla();
-    }
-});
-
-*/
-
-
-/*
-// ========== 12. INGRESAR CON TECLA ENTER ==========
+// ========== 8. TECLA ENTER ==========
 montobase.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
-        montobtn.click();
+        agregarmonto();
     }
 });
 
 descuentobase.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
-        descuentobtn.click();
+        agregardecuento();
     }
 });
 
-*/
+descripcionInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        descuentobase.focus();
+    }
+});
+
+// ========== 9. AL CARGAR ==========
+document.addEventListener('DOMContentLoaded', function() {
+    deshabilitarCamposDescuento();
+    montobase.focus();
+});
