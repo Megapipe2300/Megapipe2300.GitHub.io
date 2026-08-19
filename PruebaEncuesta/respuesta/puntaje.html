@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../css/puntaje.css"/>
+    <title>Tu Puntaje</title>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Tu Puntaje</h1>
+        <p class="subtitle">Revisa el detalle de tus respuestas</p>
+
+        <!-- Puntaje Principal -->
+        <div class="puntaje-principal">
+            <div class="nota-grande">
+                <span id="nota">0</span><span class="total">/2</span>
+            </div>
+            <div class="estrellas" id="estrellas">⭐⭐</div>
+            <div class="mensaje-puntaje" id="mensaje">Cargando...</div>
+        </div>
+
+        <!-- Resumen Rápido -->
+        <div class="resumen">
+            <div class="resumen-item aciertos">
+                <div class="numero" id="aciertos">0</div>
+                <div class="label">✅ Correctas</div>
+            </div>
+            <div class="resumen-item fallos">
+                <div class="numero" id="fallos">0</div>
+                <div class="label">❌ Incorrectas</div>
+            </div>
+            <div class="resumen-item total">
+                <div class="numero" id="total-preguntas">2</div>
+                <div class="label">📝 Total</div>
+            </div>
+        </div>
+
+       
+
+        <!-- Botones -->
+        <div class="botones">
+            <a href="../index.html" class="btn btn-primary">🔄 Volver a intentar</a>
+        </div>
+    </div>
+
+    <script>
+
+
+
+
+
+/*
+        // Función para obtener parámetros de la URL
+        function getParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                nota: parseInt(urlParams.get('nota')) || 0,
+                p1: urlParams.get('p1') || 'No respondida',
+                p2: urlParams.get('p2') || 'No respondida',
+                total: parseInt(urlParams.get('total')) || 2
+            };
+        }
+
+        // Función para determinar si la respuesta es correcta
+        function esCorrecta(respuesta) {
+            const correctas = ['1914', '1939'];
+            return correctas.includes(respuesta);
+        }
+
+        // Función para obtener el mensaje según la nota
+        function getMensaje(nota, total) {
+            const porcentaje = (nota / total) * 100;
+            if (porcentaje === 100) return "🎉 ¡Perfecto! Todas las respuestas son correctas";
+            if (porcentaje >= 70) return "👏 ¡Buen trabajo! Sigue así";
+            if (porcentaje >= 50) return "📚 ¡Puedes mejorar! Repasa un poco más";
+            return "😅 ¡Ánimo! Repasa la historia y vuelve a intentarlo";
+        }
+
+        // Función para obtener estrellas según la nota
+        function getEstrellas(nota, total) {
+            const porcentaje = (nota / total) * 100;
+            if (porcentaje === 100) return "⭐⭐⭐⭐⭐";
+            if (porcentaje >= 70) return "⭐⭐⭐⭐";
+            if (porcentaje >= 50) return "⭐⭐⭐";
+            if (porcentaje >= 30) return "⭐⭐";
+            return "⭐";
+        }
+
+        // Cargar los datos al cargar la página
+        window.onload = function() {
+            const params = getParams();
+            const { nota, p1, p2, total } = params;
+            
+            // Calcular aciertos y fallos
+            const aciertos = nota;
+            const fallos = total - nota;
+            
+            // Actualizar elementos
+            document.getElementById('nota').textContent = nota;
+            document.getElementById('aciertos').textContent = aciertos;
+            document.getElementById('fallos').textContent = fallos;
+            document.getElementById('total-preguntas').textContent = total;
+            document.getElementById('mensaje').textContent = getMensaje(nota, total);
+            document.getElementById('estrellas').textContent = getEstrellas(nota, total);
+
+            // Actualizar respuestas
+            const respuestas = [p1, p2];
+            const respuestasCorrectas = ['1914', '1939'];
+            
+            respuestas.forEach((respuesta, index) => {
+                const elemento = document.getElementById(`respuesta${index + 1}`);
+                if (respuesta === 'No respondida') {
+                    elemento.textContent = '❌ No respondida';
+                    elemento.className = 'respuesta-usuario no-respondida';
+                } else if (respuesta === respuestasCorrectas[index]) {
+                    elemento.textContent = `✅ ${respuesta} (Correcta)`;
+                    elemento.className = 'respuesta-usuario correcta';
+                } else {
+                    elemento.textContent = `❌ ${respuesta} (Incorrecta)`;
+                    elemento.className = 'respuesta-usuario incorrecta';
+                }
+            });
+        };
+        */
+    </script>
+</body>
+</html>
