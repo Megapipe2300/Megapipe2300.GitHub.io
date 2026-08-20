@@ -1,0 +1,281 @@
+﻿* ========== RESET Y ESTILOS BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+.contenedor {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.elementos {
+    margin-top: 7px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 40px 45px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+
+/* ========== TÍTULO ========== */
+h1 {
+    color: #2d3748;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+    h1::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 4px;
+    }
+
+/* ========== PREGUNTAS ========== */
+p {
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin: 25px 0 15px 0;
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+    p strong {
+        color: #4a5568;
+    }
+
+/* ========== LISTA DE OPCIONES ========== */
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px 0;
+}
+
+    ol li {
+        background: #f7fafc;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #2d3748;
+    }
+
+
+
+/* ========== RADIO BUTTONS PERSONALIZADOS ========== */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e0;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+    input[type="radio"]:checked {
+        border-color: #667eea;
+        background: #667eea;
+    }
+
+        input[type="radio"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+    input[type="radio"]:hover {
+        border-color: #667eea;
+        transform: scale(1.1);
+    }
+
+/* Opción seleccionada */
+ol li:has(input[type="radio"]:checked) {
+    background: #ebf4ff;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+/* ========== BOTÓN ========== */
+.btn-button {
+    display: block;
+    width: 100%;
+    padding: 16px 30px;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+    .btn-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+    }
+
+    .btn-button:active {
+        transform: translateY(0px);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn-button::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+        transform: scale(0);
+        transition: transform 0.5s ease;
+    }
+
+    .btn-button:hover::after {
+        transform: scale(1);
+    }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .elementos {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    ol li {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+
+    .btn-button {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .elementos {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    ol li {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        margin: 6px 0;
+    }
+
+    input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+    }
+
+    .btn-button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========== ANIMACIONES ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.elementos {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Efecto para las opciones al cargar */
+ol li {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+    ol li:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    ol li:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    ol li:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    ol li:nth-child(4) {
+        animation-delay: 0.4s;
+    }
