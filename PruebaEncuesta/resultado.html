@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/resultados.css"/>
+    
+    <title>Tu Puntaje</title>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Tu Puntaje</h1>
+        <p class="subtitle">Revisa el detalle de tus respuestas</p>
+
+        <!-- Puntaje Principal -->
+        <div class="puntaje-principal">
+            <div class="nota-grande">
+                <span id="nota">0</span>
+                <span class="total">/0</span>
+            </div>
+            <div class="mensaje-puntaje" id="mensaje"></div>
+        </div>
+
+        <!-- Resumen Rápido -->
+        <div class="resumen">
+            <div class="resumen-item aciertos">
+                <div class="numero" id="aciertos">0</div>
+                <div class="label">✅ Correctas</div>
+            </div>
+            <div class="resumen-item fallos">
+                <div class="numero" id="fallos">0</div>
+                <div class="label">❌ Incorrectas</div>
+            </div>
+            <div class="resumen-item total">
+                <div class="numero" id="total-preguntas">0</div>
+                <div class="label">📝 Total</div>
+            </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="botones">
+            <a href="index.html" class="btn btn-primary">🔄 Volver a intentar</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/resultado.js"></script>
+</body>
+</html>

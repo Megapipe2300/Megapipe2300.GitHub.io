@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-   <title></title>
+    <link rel="stylesheet" href="css/estilo.css"/>
+    <title>Encuesta HTML</title>
 </head>
 <body>
- <script>
- 
-  window.location.href = 'php/preguntas.php';
-</script>
+    <div class="contenedor">
+        <div class="elementos">
+            <div class="quiz-container">
+                <h2>Responda las preguntas</h2>
+                <form id="quiz-form"></form>
+                <button id="result-btn" type="button">RESULTADO</button>
+                <h3 id="result"></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/preguntas.js"></script>
 </body>
 </html>
