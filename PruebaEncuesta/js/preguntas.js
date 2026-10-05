@@ -62,13 +62,24 @@ function renderizarPreguntas() {
         item.opciones.forEach((opcion, i) => {
             const li = document.createElement("li");
 
+            // Crear un LABEL que envuelve todo (input + texto)
+            const label = document.createElement("label");
+            label.style.display = "flex";
+            label.style.alignItems = "center";
+            label.style.width = "100%";
+            label.style.cursor = "pointer";
+
             const input = document.createElement("input");
             input.type = "radio";
             input.name = `pregunta${index}`;
             input.value = i;
 
-            li.appendChild(input);
-            li.appendChild(document.createTextNode(` ${opcion}`));
+            const span = document.createElement("span");
+            span.textContent = ` ${opcion}`;
+
+            label.appendChild(input);
+            label.appendChild(span);
+            li.appendChild(label);
             ol.appendChild(li);
         });
 
