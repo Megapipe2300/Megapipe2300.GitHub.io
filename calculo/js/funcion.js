@@ -17,7 +17,7 @@ const totalDescuentosMostrar = document.getElementById("total_descuentos_mostrar
 
 // ========== FUNCIÓN: FORMATEAR CON PUNTOS ==========
 function formatearConPuntos(numero) {
-    return Math.round(numero).toLocaleString('es-ES');
+    return Math.round(numero).toLocaleString('es-CL');
 }
 
 // ========== FUNCIÓN: FORMATEAR INPUT ==========
@@ -36,7 +36,7 @@ function formatearInput(input) {
         return;
     }
     
-    input.value = numero.toLocaleString('es-ES');
+    input.value = numero.toLocaleString('es-CL');
 }
 
 // ========== FUNCIÓN: OBTENER VALOR SIN PUNTOS ==========
