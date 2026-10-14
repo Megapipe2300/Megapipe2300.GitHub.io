@@ -358,6 +358,7 @@ function limpiarmontobtn() {
     if (confirm("¿Deseas borrar el monto ingresado?")) {
         montobase.value = "";
         montoMostrar.textContent = "Monto: $0";
+        monto_total.value = "Monto Total: $0";
         montoMostrar.style.color = "#667eea";
         montobase.focus();
 
