@@ -325,4 +325,8 @@ h1 {
         aspect-ratio: 1 / 1;
         object-fit: cover;
     }
+    #lightbox img {
+    
+        width: 10%;
+    }
 }
