@@ -294,6 +294,9 @@ h1 {
         gap: 12px; 
         padding: 6px 12px; 
     }
+     #lightbox img { 
+        width: 95%;
+    }
 }
 
 /* Pantallas muy pequeñas (320px - 480px) */
@@ -311,6 +314,9 @@ h1 {
     h1 {
         font-size: 28px;
     }
+     #lightbox img { 
+        width: 95%;
+    }
 }
 
 /* Para pantalla 1080x2340 específicamente */
@@ -325,8 +331,7 @@ h1 {
         aspect-ratio: 1 / 1;
         object-fit: cover;
     }
-    #lightbox img {
-    
-        width: 10%;
+    #lightbox img { 
+        width: 95%;
     }
 }
