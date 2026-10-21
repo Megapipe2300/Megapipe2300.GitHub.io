@@ -216,122 +216,30 @@ h1 {
 /* ========== MEDIA QUERIES PARA MÓVILES ========== */
 /* LAS FOTOS AHORA SON CUADRADAS EN MÓVIL */
 
-/* Pantallas hasta 768px (tablets y móviles grandes) */
-@media screen and (max-width: 768px) {
-    h1 { 
-        font-size: 42px; 
-    }
-    
-    .grid { 
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
-        gap: 12px; 
-    }
-    
-    /* 🔥 CLAVE: imágenes CUADRADAS en móvil */
-    .grid img { 
-        height: auto;           /* Quitamos altura fija */
-        aspect-ratio: 1 / 1;   /* Fuerza cuadrado perfecto */
-        object-fit: cover;     
-        border-radius: 14px;
-    }
-    
-    .boton {
-        padding: 10px 20px;
-        font-size: 12px;
-    }
-    
-    .acciones-bar { 
-        gap: 20px; 
-        padding: 8px 20px; 
-    }
-    
-    .accion-btn { 
-        padding: 6px 16px; 
-        font-size: 1.4rem; 
-    }
-    
-    .accion-btn span { 
-        font-size: 0.8rem; 
-    }
-    
-    .close-btn { 
-        width: 45px; 
-        height: 45px; 
-        font-size: 38px; 
-        top: 15px; 
-        right: 15px; 
-    }
-}
+/* ========== MEDIA QUERIES PARA MÓVILES ========== */
 
-/* Pantallas hasta 665px (móviles medianos) */
-@media screen and (max-width: 665px) {
-    h1 { 
-        font-size: 32px; 
-    }
-    
-    .grid { 
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
-        gap: 10px; 
-    }
-    
-    /* 🔥 CLAVE: imágenes CUADRADAS también aquí */
-    .grid img { 
-        height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 12px;
-    }
-    
-    .accion-btn span { 
-        font-size: 0.7rem; 
-    }
-    
-    .accion-btn i { 
-        font-size: 1.4rem; 
-    }
-    
-    .acciones-bar { 
-        gap: 12px; 
-        padding: 6px 12px; 
-    }
-     #lightbox img { 
+/* Móviles pequeños (iPhone SE, Galaxy S8, etc) */
+
+
+ @media screen and (max-width: 768px) {
+            h1 { font-size: 42px; }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+            .grid img { height: 200px; }
+            .boton {padding: 10px 20px;font-size: 12px;}    
+            .acciones-bar { gap: 20px; padding: 8px 20px; }
+            .accion-btn { padding: 6px 16px; font-size: 1.4rem; }
+            .accion-btn span { font-size: 0.8rem; }     
+            .close-btn { width: 45px; height: 45px; font-size: 38px; top: 15px; right: 15px; }
+             #lightbox img {
         width: 95%;
     }
-}
+            }
 
-/* Pantallas muy pequeñas (320px - 480px) */
-@media screen and (max-width: 480px) {
-    .grid { 
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
-        gap: 8px; 
+  @media screen and (max-width: 500px) {
+            h1 { font-size: 32px; }
+            .grid img { height: 170px; }
+            .accion-btn span { font-size: 0.7rem; }
+            .accion-btn i { font-size: 1.4rem; }
+            .acciones-bar { gap: 12px; padding: 6px 12px; }
+            #lightbox img { width: 95%; }
     }
-    
-    .grid img { 
-        aspect-ratio: 1 / 1;
-        border-radius: 10px;
-    }
-    
-    h1 {
-        font-size: 28px;
-    }
-     #lightbox img { 
-        width: 95%;
-    }
-}
-
-/* Para pantalla 1080x2340 específicamente */
-@media screen and (min-width: 1080px) and (max-width: 1200px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }
-    
-    .grid img {
-        height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-    }
-    #lightbox img { 
-        width: 95%;
-    }
-}
