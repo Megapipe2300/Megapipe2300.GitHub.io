@@ -193,6 +193,7 @@ h1 {
 }
 
 .boton {
+    margin-left: 1em;
     padding: 12px 24px;
     background: #D900D9;
     color: #ffffff;
