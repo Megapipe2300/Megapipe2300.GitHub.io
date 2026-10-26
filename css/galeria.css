@@ -198,11 +198,11 @@ h1 {
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
-    border-radius: 2rem;
+    border-radius: 20px;
     font-weight: bold;
     transition: 0.25s;
     display: inline-block;
-    font-size: 1rem;
+    font-size: 20px;
     box-shadow: 0 5px 12px black;
     touch-action: manipulation;
 }
