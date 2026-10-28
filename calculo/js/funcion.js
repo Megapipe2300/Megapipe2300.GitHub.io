@@ -292,9 +292,11 @@ function calcularTotales() {
         limpiesatablabtn.style.opacity = "1";
         limpiesatablabtn.style.cursor = "pointer";
 
+
+        
     } else if (totalFinal <= 100000) {
         // Monto medio
-        montototal.style.color = "#ff9800";
+        montototal.style.color = "#E9D502";
 
         // Habilitar campos de descuento
         descuentobase.disabled = false;
