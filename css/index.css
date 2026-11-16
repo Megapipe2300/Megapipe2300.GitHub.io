@@ -1,0 +1,476 @@
+﻿/* ===== RESET Y BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f7b731 100%);
+    background-size: 200% 200%;
+    animation: fondoAnimado 12s ease infinite;
+    padding: 20px;
+}
+
+@keyframes fondoAnimado {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== CONTENEDOR Y TARJETA ===== */
+.contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contenido {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.splash {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 45px 35px;
+    max-width: 530px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+    animation: aparecer 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+    /* ===== TÍTULO ===== */
+    .splash h1 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #2d2d2d;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+        position: relative;
+        display: inline-block;
+
+    }
+
+        .splash h1::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #f7b731, #764ba2);
+            border-radius: 4px;
+            margin: 12px auto 0;
+        }
+
+    /* ===== IMAGEN / GIF ===== */
+    .splash img {
+        display: block;
+        display: block;
+        margin: 0 auto 25px;
+        max-width: 1%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    
+
+    /* ===== TEXTO ===== */
+    .splash p {
+        color: #555;
+        line-height: 1.7;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets y móviles grandes (≤ 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .splash {
+        padding: 35px 25px;
+        border-radius: 20px;
+        max-width: 420px;
+    }
+
+        .splash h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .splash img {
+            width: 200px;
+            height: auto;
+        }
+
+        .splash p {
+            font-size: 14px;
+        }
+}
+
+/* Móviles medianos (≤ 665px) */
+@media screen and (max-width: 665px) {
+    body {
+        padding: 12px;
+        align-items: center;
+    }
+
+    .splash {
+        padding: 30px 20px;
+        border-radius: 18px;
+        max-width: 100%;
+    }
+
+        .splash h1 {
+            font-size: 20px;
+        }
+
+            .splash h1::after {
+                width: 45px;
+                height: 3px;
+            }
+
+        .splash img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 18px;
+        }
+
+        .splash p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+}
+
+/* Móviles pequeños (≤ 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .splash {
+        padding: 25px 16px;
+        border-radius: 16px;
+    }
+
+        .splash h1 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+            .splash h1::after {
+                width: 40px;
+                height: 3px;
+                margin-top: 8px;
+            }
+
+        .splash img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 12px;
+        }
+
+        .splash p {
+            font-size: 13px;
+            line-height: 1.55;
+        }
+}
+
+/* Móviles muy pequeños (≤ 360px) */
+@media screen and (max-width: 360px) {
+    .splash {
+        padding: 20px 14px;
+    }
+
+        .splash h1 {
+            font-size: 16px;
+        }
+
+        .splash img {
+            width: 130px;
+        }
+
+        .splash p {
+            font-size: 12px;
+        }
+}
+
+/* Pantallas altas tipo 1080x2340 (móvil en vertical) */
+@media screen and (min-width: 1080px) and (max-width: 1200px) {
+    .splash {
+        max-width: 520px;
+    }
+}
+/* ===== RESET Y BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f7b731 100%);
+    background-size: 200% 200%;
+    animation: fondoAnimado 12s ease infinite;
+    padding: 20px;
+}
+
+@keyframes fondoAnimado {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== CONTENEDOR Y TARJETA ===== */
+.contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contenido {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.splash {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 45px 35px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+    animation: aparecer 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+    /* ===== TÍTULO ===== */
+    .splash h1 {
+        font-size: 25px;
+        font-weight: 700;
+        color: #2d2d2d;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+        position: relative;
+        display: inline-block;
+    }
+
+        .splash h1::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, #f7b731, #764ba2);
+            border-radius: 4px;
+            margin: 12px auto 0;
+        }
+
+    /* ===== IMAGEN / GIF ===== */
+    .splash img {
+        display: block;
+        display: block;
+        margin: 0 auto 25px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+        .splash img:hover {
+            transform: scale(1.03) rotate(-1deg);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+        }
+
+    /* ===== TEXTO ===== */
+    .splash p {
+        color: #555;
+        line-height: 1.7;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets y móviles grandes (≤ 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .splash {
+        padding: 35px 25px;
+        border-radius: 20px;
+        max-width: 420px;
+    }
+
+        .splash h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .splash img {
+            width: 200px;
+            height: auto;
+        }
+
+        .splash p {
+            font-size: 14px;
+        }
+}
+
+/* Móviles medianos (≤ 665px) */
+@media screen and (max-width: 665px) {
+    body {
+        padding: 12px;
+        align-items: center;
+    }
+
+    .splash {
+        padding: 30px 20px;
+        border-radius: 18px;
+        max-width: 100%;
+    }
+
+        .splash h1 {
+            font-size: 20px;
+        }
+
+            .splash h1::after {
+                width: 45px;
+                height: 3px;
+            }
+
+        .splash img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 18px;
+        }
+
+        .splash p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+}
+
+/* Móviles pequeños (≤ 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .splash {
+        padding: 25px 16px;
+        border-radius: 16px;
+    }
+
+        .splash h1 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+            .splash h1::after {
+                width: 40px;
+                height: 3px;
+                margin-top: 8px;
+            }
+
+        .splash img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 12px;
+        }
+
+        .splash p {
+            font-size: 13px;
+            line-height: 1.55;
+        }
+}
+
+/* Móviles muy pequeños (≤ 360px) */
+@media screen and (max-width: 360px) {
+    .splash {
+        padding: 20px 14px;
+    }
+
+        .splash h1 {
+            font-size: 16px;
+        }
+
+        .splash img {
+            width: 130px;
+        }
+
+        .splash p {
+            font-size: 12px;
+        }
+}
+
+/* Pantallas altas tipo 1080x2340 (móvil en vertical) */
+@media screen and (min-width: 1080px) and (max-width: 1200px) {
+    .splash {
+        max-width: 520px;
+    }
+}
