@@ -8,7 +8,7 @@
     'use strict';
 
     // ===== CONFIGURACIÓN =====
-    const SEGUNDOS = 5;              // tiempo de espera
+    const SEGUNDOS = 10;              // tiempo de espera
     const DESTINO = 'principal.html';  // página principal
 
     // ===== REDIRECCIÓN DESPUÉS DE N SEGUNDOS =====
